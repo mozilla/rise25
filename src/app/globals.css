@@ -46,7 +46,7 @@ body {
 
 h1,
 .type-heading-1 {
-  @apply font-semibold text-9xl tracking-tight leading-tight;
+  @apply text-9xl tracking-tight leading-tight font-extrabold;
 }
 
 h2,
@@ -120,4 +120,24 @@ p {
 
 .btn-primary {
   @apply bg-black text-white border-2 border-black hover:bg-transparent hover:text-black;
+}
+
+.bg-background {
+  @apply inset-0 fixed pointer-events-none;
+}
+
+.bg-background > * {
+  @apply absolute h-screen w-auto;
+}
+
+.green-blurb {
+  @apply right-0;
+}
+
+.purple-blurb {
+  transform: translate(-10%, 10%);
+}
+
+.orange-blurb {
+  transform: translate(-10%, -10%);
 }
