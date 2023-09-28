@@ -96,11 +96,15 @@ p {
   @apply max-w-7xl;
 }
 
+.container--2xl {
+  @apply max-w-8xl;
+}
+
 /**
  * Section
  */
 .section {
-  @apply py-4 lg:py-8;
+  @apply py-4 lg:py-8 w-full;
 }
 
 .section--lg {
