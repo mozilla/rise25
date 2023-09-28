@@ -145,3 +145,45 @@ p {
 .orange-blurb {
   transform: translate(-10%, -10%);
 }
+
+/**
+ * Winners
+ */
+.winners {
+  @apply flex gap-4 overflow-x-scroll;
+}
+
+.winner-group {
+  @apply flex gap-4;
+}
+
+.card {
+  @apply w-full aspect-[33/60] relative bg-secondary min-w-[400px];
+}
+
+.group-card {
+  @apply flex px-8 py-12;
+}
+
+.group-card-inner {
+  @apply z-1 relative mt-auto mb-0 flex flex-col gap-12 lg:gap-16 items-start;
+}
+
+.group-card-title {
+  @apply type-heading-2 p-4;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: var(
+    #fff,
+    radial-gradient(
+      99.42% 99.42% at 50% 50%,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    )
+  );
+  backdrop-filter: blur(6px);
+}
+
+.group-navigation {
+  @apply flex justify-between mb-8;
+}

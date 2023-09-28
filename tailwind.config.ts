@@ -40,6 +40,10 @@ const config: Config = {
         "11xl": "140rem",
         "12xl": "152rem",
       },
+      zIndex: {
+        "1": "1",
+        "100": "100",
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],
