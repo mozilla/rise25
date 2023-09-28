@@ -3,7 +3,6 @@
 import React from "react"
 import Image from 'next/image';
 import Link from 'next/link';
-import { spawn } from "child_process";
 
 const winnerGroups = [
     {

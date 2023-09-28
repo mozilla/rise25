@@ -122,8 +122,8 @@ p {
   @apply inline-flex font-medium uppercase py-3 px-4 max-w-max rounded-md cursor-pointer;
 }
 
-.btn-primary {
-  @apply bg-black text-white border-2 border-black hover:bg-transparent hover:text-black;
+.btn-light {
+  @apply border bg-white text-black hover:bg-primary;
 }
 
 .bg-background {
@@ -173,14 +173,6 @@ p {
   @apply type-heading-2 p-4;
 
   border: 1px solid rgba(255, 255, 255, 0.3);
-  background: var(
-    #fff,
-    radial-gradient(
-      99.42% 99.42% at 50% 50%,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(0, 0, 0, 0.2) 100%
-    )
-  );
   backdrop-filter: blur(6px);
 }
 
