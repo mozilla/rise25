@@ -7,7 +7,7 @@ import Image from "next/image";
 export const Header = () => {
 
     return (
-        <div className="sticky top-0 z-50 w-full ">
+        <header className="sticky top-0 z-50 w-full ">
 
             <div className="px-4 sm:px-6 container container--xl">
                 <div className="flex items-center justify-between py-6 gap-4">
@@ -28,6 +28,6 @@ export const Header = () => {
                 </div>
             </div>
 
-        </div>
+        </header>
     )
 }

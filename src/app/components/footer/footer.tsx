@@ -12,7 +12,7 @@ const navigation = [
 export const Footer = () => {
 
     return (
-        <div className="relative py-4 lg:py-6 w-full">
+        <footer className="relative py-4 lg:py-6 w-full">
 
             <div className="container container--xl">
                 <div className="flex flex-col gap-4 lg:gap-6">
@@ -27,6 +27,6 @@ export const Footer = () => {
                 </div>
             </div>
 
-        </div>
+        </footer>
     )
 }
