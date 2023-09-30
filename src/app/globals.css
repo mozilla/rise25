@@ -8,7 +8,7 @@
   --color-tertiary: #ffb39a;
   --color-quaternary: #89d5ff;
   --color-light: #ffffff;
-  --color-gray: #eeeeee;
+  --color-gray: #d9d9d9;
   --color-dark: #000000;
 }
 
@@ -157,6 +157,14 @@ p {
   @apply flex gap-4;
 }
 
+.winner-name {
+  @apply z-10 absolute bottom-0 left-0 w-full bg-gray text-black p-4 type-heading-4 text-center;
+}
+
+.winner-info {
+  @apply p-6;
+}
+
 .card {
   @apply w-full aspect-[33/60] relative bg-secondary min-w-[400px];
 }
@@ -170,12 +178,13 @@ p {
 }
 
 .group-card-title {
-  @apply type-heading-2 p-4;
-
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(6px);
+  @apply type-heading-2 p-4 bg-gray text-black flex gap-4 items-center;
 }
 
 .group-navigation {
   @apply flex justify-between mb-8;
+}
+
+.footer a {
+  @apply underline hover:text-primary;
 }

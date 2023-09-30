@@ -3,6 +3,7 @@
 import React from "react"
 import Image from 'next/image';
 import Link from 'next/link';
+import { ArrowRight } from "../icons"
 
 const winnerGroups = [
     {
@@ -15,19 +16,23 @@ const winnerGroups = [
         winners: [
             {
                 imgSrc: "/headshots/headshot-image-1.jpg",
-                title: "Dries Depoorter"
+                title: "Dries Depoorter",
+                bio: "<p>Kay Lopez is a Social Media Consultant and Content Director focused on multicultural storytelling with experience in Houston, NYC, and LA, working on brands like; General Mills, L'Oréal, NBCUniversal, Warner Media, and more.</p><p>Latinas Poderosas is a LATINA-empowered social platform that celebrates both past and present Latina accomplishments. Uplifting the modern-day mujer by motivating her to unapologetically embrace her heritage, traditions, and duality.</p>",
             },
             {
                 imgSrc: "/headshots/headshot-image-2.jpg",
-                title: "Dries Depoorter"
+                title: "Kay Lopez",
+                bio: "<p>Kay Lopez is a Social Media Consultant and Content Director focused on multicultural storytelling with experience in Houston, NYC, and LA, working on brands like; General Mills, L'Oréal, NBCUniversal, Warner Media, and more.</p><p>Latinas Poderosas is a LATINA-empowered social platform that celebrates both past and present Latina accomplishments. Uplifting the modern-day mujer by motivating her to unapologetically embrace her heritage, traditions, and duality.</p>"
             },
             {
                 imgSrc: "/headshots/headshot-image-3.jpg",
-                title: "Dries Depoorter"
+                title: "Fanny Hidvegi",
+                bio: "<p>Kay Lopez is a Social Media Consultant and Content Director focused on multicultural storytelling with experience in Houston, NYC, and LA, working on brands like; General Mills, L'Oréal, NBCUniversal, Warner Media, and more.</p><p>Latinas Poderosas is a LATINA-empowered social platform that celebrates both past and present Latina accomplishments. Uplifting the modern-day mujer by motivating her to unapologetically embrace her heritage, traditions, and duality.</p>"
             },
             {
                 imgSrc: "/headshots/headshot-image-4.jpg",
-                title: "Dries Depoorter"
+                title: "Julia Janssen",
+                bio: "<p>Kay Lopez is a Social Media Consultant and Content Director focused on multicultural storytelling with experience in Houston, NYC, and LA, working on brands like; General Mills, L'Oréal, NBCUniversal, Warner Media, and more.</p><p>Latinas Poderosas is a LATINA-empowered social platform that celebrates both past and present Latina accomplishments. Uplifting the modern-day mujer by motivating her to unapologetically embrace her heritage, traditions, and duality.</p>"
             },
         ]
     },
@@ -41,15 +46,18 @@ const winnerGroups = [
         winners: [
             {
                 imgSrc: "/headshots/headshot-image-5.jpg",
-                title: "Dries Depoorter"
+                title: "Christian (Chris) Smalls",
+                bio: "<p>Kay Lopez is a Social Media Consultant and Content Director focused on multicultural storytelling with experience in Houston, NYC, and LA, working on brands like; General Mills, L'Oréal, NBCUniversal, Warner Media, and more.</p><p>Latinas Poderosas is a LATINA-empowered social platform that celebrates both past and present Latina accomplishments. Uplifting the modern-day mujer by motivating her to unapologetically embrace her heritage, traditions, and duality.</p>"
             },
             {
                 imgSrc: "/headshots/headshot-image-6.jpg",
-                title: "Dries Depoorter"
+                title: "Rob Morris",
+                bio: "<p>Kay Lopez is a Social Media Consultant and Content Director focused on multicultural storytelling with experience in Houston, NYC, and LA, working on brands like; General Mills, L'Oréal, NBCUniversal, Warner Media, and more.</p><p>Latinas Poderosas is a LATINA-empowered social platform that celebrates both past and present Latina accomplishments. Uplifting the modern-day mujer by motivating her to unapologetically embrace her heritage, traditions, and duality.</p>"
             },
             {
                 imgSrc: "/headshots/headshot-image-7.jpg",
-                title: "Dries Depoorter"
+                title: "Keoni Mahelona",
+                bio: "<p>Kay Lopez is a Social Media Consultant and Content Director focused on multicultural storytelling with experience in Houston, NYC, and LA, working on brands like; General Mills, L'Oréal, NBCUniversal, Warner Media, and more.</p><p>Latinas Poderosas is a LATINA-empowered social platform that celebrates both past and present Latina accomplishments. Uplifting the modern-day mujer by motivating her to unapologetically embrace her heritage, traditions, and duality.</p>"
             },
         ]
     },
@@ -63,19 +71,23 @@ const winnerGroups = [
         winners: [
             {
                 imgSrc: "/headshots/headshot-image-1.jpg",
-                title: "Dries Depoorter"
+                title: "Larissa (Larz) May",
+                bio: "<p>Kay Lopez is a Social Media Consultant and Content Director focused on multicultural storytelling with experience in Houston, NYC, and LA, working on brands like; General Mills, L'Oréal, NBCUniversal, Warner Media, and more.</p><p>Latinas Poderosas is a LATINA-empowered social platform that celebrates both past and present Latina accomplishments. Uplifting the modern-day mujer by motivating her to unapologetically embrace her heritage, traditions, and duality.</p>"
             },
             {
                 imgSrc: "/headshots/headshot-image-2.jpg",
-                title: "Dries Depoorter"
+                title: "Nyamekye Wilson",
+                bio: "<p>Kay Lopez is a Social Media Consultant and Content Director focused on multicultural storytelling with experience in Houston, NYC, and LA, working on brands like; General Mills, L'Oréal, NBCUniversal, Warner Media, and more.</p><p>Latinas Poderosas is a LATINA-empowered social platform that celebrates both past and present Latina accomplishments. Uplifting the modern-day mujer by motivating her to unapologetically embrace her heritage, traditions, and duality.</p>"
             },
             {
                 imgSrc: "/headshots/headshot-image-3.jpg",
-                title: "Dries Depoorter"
+                title: "Trisha Prabhu",
+                bio: "<p>Kay Lopez is a Social Media Consultant and Content Director focused on multicultural storytelling with experience in Houston, NYC, and LA, working on brands like; General Mills, L'Oréal, NBCUniversal, Warner Media, and more.</p><p>Latinas Poderosas is a LATINA-empowered social platform that celebrates both past and present Latina accomplishments. Uplifting the modern-day mujer by motivating her to unapologetically embrace her heritage, traditions, and duality.</p>"
             },
             {
                 imgSrc: "/headshots/headshot-image-4.jpg",
-                title: "Dries Depoorter"
+                title: "Dries Depoorter",
+                bio: "<p>Kay Lopez is a Social Media Consultant and Content Director focused on multicultural storytelling with experience in Houston, NYC, and LA, working on brands like; General Mills, L'Oréal, NBCUniversal, Warner Media, and more.</p><p>Latinas Poderosas is a LATINA-empowered social platform that celebrates both past and present Latina accomplishments. Uplifting the modern-day mujer by motivating her to unapologetically embrace her heritage, traditions, and duality.</p>"
             },
         ]
     },
@@ -89,15 +101,18 @@ const winnerGroups = [
         winners: [
             {
                 imgSrc: "/headshots/headshot-image-8.jpg",
-                title: "Dries Depoorter"
+                title: "Finn Myrstad",
+                bio: "<p>Kay Lopez is a Social Media Consultant and Content Director focused on multicultural storytelling with experience in Houston, NYC, and LA, working on brands like; General Mills, L'Oréal, NBCUniversal, Warner Media, and more.</p><p>Latinas Poderosas is a LATINA-empowered social platform that celebrates both past and present Latina accomplishments. Uplifting the modern-day mujer by motivating her to unapologetically embrace her heritage, traditions, and duality.</p>"
             },
             {
                 imgSrc: "/headshots/headshot-image-9.jpg",
-                title: "Dries Depoorter"
+                title: "Natalia Domagala",
+                bio: "<p>Kay Lopez is a Social Media Consultant and Content Director focused on multicultural storytelling with experience in Houston, NYC, and LA, working on brands like; General Mills, L'Oréal, NBCUniversal, Warner Media, and more.</p><p>Latinas Poderosas is a LATINA-empowered social platform that celebrates both past and present Latina accomplishments. Uplifting the modern-day mujer by motivating her to unapologetically embrace her heritage, traditions, and duality.</p>"
             },
             {
                 imgSrc: "/headshots/headshot-image-10.jpg",
-                title: "Dries Depoorter"
+                title: "Marlena Myles",
+                bio: "<p>Kay Lopez is a Social Media Consultant and Content Director focused on multicultural storytelling with experience in Houston, NYC, and LA, working on brands like; General Mills, L'Oréal, NBCUniversal, Warner Media, and more.</p><p>Latinas Poderosas is a LATINA-empowered social platform that celebrates both past and present Latina accomplishments. Uplifting the modern-day mujer by motivating her to unapologetically embrace her heritage, traditions, and duality.</p>"
             }
         ]
     },
@@ -111,15 +126,18 @@ const winnerGroups = [
         winners: [
             {
                 imgSrc: "/headshots/headshot-image-8.jpg",
-                title: "Dries Depoorter"
+                title: "Vitus Spehar",
+                bio: "<p>Kay Lopez is a Social Media Consultant and Content Director focused on multicultural storytelling with experience in Houston, NYC, and LA, working on brands like; General Mills, L'Oréal, NBCUniversal, Warner Media, and more.</p><p>Latinas Poderosas is a LATINA-empowered social platform that celebrates both past and present Latina accomplishments. Uplifting the modern-day mujer by motivating her to unapologetically embrace her heritage, traditions, and duality.</p>"
             },
             {
                 imgSrc: "/headshots/headshot-image-9.jpg",
-                title: "Dries Depoorter"
+                title: "Abbie Richards",
+                bio: "<p>Kay Lopez is a Social Media Consultant and Content Director focused on multicultural storytelling with experience in Houston, NYC, and LA, working on brands like; General Mills, L'Oréal, NBCUniversal, Warner Media, and more.</p><p>Latinas Poderosas is a LATINA-empowered social platform that celebrates both past and present Latina accomplishments. Uplifting the modern-day mujer by motivating her to unapologetically embrace her heritage, traditions, and duality.</p>"
             },
             {
                 imgSrc: "/headshots/headshot-image-10.jpg",
-                title: "Dries Depoorter"
+                title: "Ahmad Hegab",
+                bio: "<p>Kay Lopez is a Social Media Consultant and Content Director focused on multicultural storytelling with experience in Houston, NYC, and LA, working on brands like; General Mills, L'Oréal, NBCUniversal, Warner Media, and more.</p><p>Latinas Poderosas is a LATINA-empowered social platform that celebrates both past and present Latina accomplishments. Uplifting the modern-day mujer by motivating her to unapologetically embrace her heritage, traditions, and duality.</p>"
             }
         ]
     },
@@ -148,7 +166,8 @@ export const Winners = () => {
                             {group.group && (
                                 <div id={group.group.slug} className="group-card card">
                                     <div className={`group-card-inner`}>
-                                        <h3 className={`group-card-title`}>{group.group.name}</h3>
+                                        <h3 className={`group-card-title`}>{group.group.name} <ArrowRight className={`h-12 text-[140%]`} />
+                                        </h3>
                                         <p>{group.group.description}</p>
                                     </div>
                                     <Image className={`z-0`} src={group.group.imgSrc} layout="fill" objectFit="cover" alt={group.group.name} />
@@ -156,6 +175,10 @@ export const Winners = () => {
                             )}
                             {group.winners.map((winner, winnerIndex) => (
                                 <div key={winnerIndex} className="winner card">
+                                    <div className="winner-name">{winner.title}</div>
+                                    <div className="winner-info">
+                                        <span dangerouslySetInnerHTML={{ __html: winner.bio }} />
+                                    </div>
                                     <Image src={winner.imgSrc} layout="fill" objectFit="cover" alt={winner.title} />
                                 </div>
                             ))}
