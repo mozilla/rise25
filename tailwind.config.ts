@@ -22,6 +22,7 @@ const config: Config = {
         secondary: "var(--color-secondary)",
         tertiary: "var(--color-tertiary)",
         quaternary: "var(--color-quaternary)",
+        overlay: "var(--color-overlay)",
       },
       maxWidth: {
         "4xs": "14rem",

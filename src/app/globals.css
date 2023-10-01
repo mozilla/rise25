@@ -10,6 +10,7 @@
   --color-light: #ffffff;
   --color-gray: #d9d9d9;
   --color-dark: #000000;
+  --color-overlay: rgba(0, 0, 0, 0.65);
 }
 
 :root {
@@ -157,12 +158,27 @@ p {
   @apply flex gap-4;
 }
 
+.winner {
+}
+
 .winner-name {
-  @apply z-10 absolute bottom-0 left-0 w-full bg-gray text-black p-4 type-heading-4 text-center;
+  @apply z-20 absolute bottom-0 left-0 w-full bg-gray text-black p-4 type-heading-4 text-center group-hover:bg-transparent group-hover:text-white;
 }
 
 .winner-info {
-  @apply p-6;
+  @apply pt-6 px-6 pb-16 inset-0 bg-overlay backdrop-blur absolute z-10 hidden group-hover:block space-y-8;
+}
+
+.winner-social {
+  @apply inline-flex gap-2;
+}
+
+.winner-social-link {
+  @apply hover:text-primary;
+}
+
+.winner-bio {
+  @apply block;
 }
 
 .card {
