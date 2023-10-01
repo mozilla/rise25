@@ -17,7 +17,7 @@ export const Footer = () => {
 
             <div className="container container--2xl">
                 <div className="flex flex-col gap-4 lg:gap-6 lg:flex-row lg:justify-between lg:items-end">
-                    <div className="space-y-8 max-w-[65ch]">
+                    <div className="space-y-8 max-w-[80ch]">
                         <Link href="https://foundation.mozilla.org/" target="_blank" rel="nofollow noreferrer">
                             <span className="sr-only">Mozilla Foundation</span>
                             <Image
@@ -28,11 +28,11 @@ export const Footer = () => {
                                 alt="Mozilla Foundation"
                             />
                         </Link>
-                        <p>Portions of this content are ©1998–2022 by individual mozilla.org contributors. Content available under a <Link href="https://www.mozilla.org/en-US/foundation/licensing/website-content/" target="_blank">Creative Commons license.</Link></p>
+                        <p className="type-body-xs">Portions of this content are ©1998–2022 by individual mozilla.org contributors. Content available under a <Link href="https://www.mozilla.org/en-US/foundation/licensing/website-content/" target="_blank">Creative Commons license.</Link></p>
                     </div>
                     <nav className="flex gap-6" role="navigation">
                         {navigation.map((item) => (
-                            <Link key={item.name} href={item.href}>
+                            <Link className="type-body-xs" key={item.name} href={item.href}>
                                 <span>{item.name}</span>
                             </Link>
                         ))}

@@ -251,14 +251,14 @@ export const Winners = () => {
             <div className="container container--2xl">
                 <div className="group-navigation">
                     {winnerGroups.map((group, groupIndex) => (
-                        <>
+                        <React.Fragment key={groupIndex}>
                             <div className="group-navigation-item" key={groupIndex}>
                                 <Link className="group-card-link" href={`#${group.group.slug}`}>
                                     {group.group.name}
                                 </Link>
                             </div>
                             {groupIndex < winnerGroups.length - 1 && <span> / </span>}
-                        </>
+                        </React.Fragment>
                     ))}
                 </div>
 
@@ -270,7 +270,7 @@ export const Winners = () => {
                                     <div className={`group-card-inner`}>
                                         <h3 className={`group-card-title`}>{group.group.name} <ArrowRight className={`h-12 text-[140%]`} />
                                         </h3>
-                                        <p>{group.group.description}</p>
+                                        <p className="text-lg">{group.group.description}</p>
                                     </div>
                                     <Image className={`z-0`} src={group.group.imgSrc} layout="fill" objectFit="cover" alt={group.group.name} />
                                 </div>

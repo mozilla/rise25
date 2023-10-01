@@ -52,7 +52,7 @@ h1,
 
 h2,
 .type-heading-2 {
-  @apply font-semibold text-5xl tracking-tight leading-tight;
+  @apply font-semibold text-5xl tracking-tighter leading-tight;
 }
 
 h3,
@@ -72,6 +72,17 @@ h5,
 
 p {
   @apply text-base tracking-normal;
+}
+
+.type-body-lg {
+}
+
+.type-body-sm {
+  @apply text-sm;
+}
+
+.type-body-xs {
+  @apply text-xs;
 }
 
 /**
@@ -120,7 +131,7 @@ p {
  * Buttons
  */
 .btn {
-  @apply inline-flex font-medium uppercase py-3 px-4 max-w-max rounded-md cursor-pointer;
+  @apply inline-flex font-medium uppercase py-3 px-4 max-w-max rounded-md cursor-pointer text-lg;
 }
 
 .btn-light {
@@ -178,7 +189,11 @@ p {
 }
 
 .winner-bio {
-  @apply block;
+  @apply block space-y-2;
+}
+
+.winner-bio p {
+  @apply type-body-sm;
 }
 
 .card {
@@ -199,6 +214,10 @@ p {
 
 .group-navigation {
   @apply flex justify-between mb-8;
+}
+
+.group-navigation-item {
+  @apply text-sm;
 }
 
 .footer a {
