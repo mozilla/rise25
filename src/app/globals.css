@@ -47,7 +47,7 @@ body {
 
 h1,
 .type-heading-1 {
-  @apply text-9xl tracking-tight leading-tight font-extrabold;
+  @apply text-6xl lg:text-9xl tracking-tight leading-tight font-extrabold;
 }
 
 h2,
@@ -158,6 +158,10 @@ p {
   transform: translate(-10%, -10%);
 }
 
+.header a {
+  @apply text-xs lg:text-lg;
+}
+
 /**
  * Winners
  */
@@ -197,7 +201,7 @@ p {
 }
 
 .card {
-  @apply w-full aspect-[33/60] relative bg-secondary min-w-[400px];
+  @apply w-full aspect-[33/60] relative bg-secondary min-w-[340px] lg:min-w-[400px];
 }
 
 .group-card {
