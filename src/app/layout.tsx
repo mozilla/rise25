@@ -1,9 +1,10 @@
-import './globals.css'
 import type { Metadata } from 'next'
+import { SceneProvider } from './context/scene-context'
 import { PurpleBlurb, OrangeBlurb, GreenBlurb } from './components/icons'
 import { Footer } from './components/footer'
 import { Header } from './components/header'
 import { Inter } from 'next/font/google'
+import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,17 +19,19 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Header />
-        {children}
-        <Footer />
-        <div className="bg-background -z-1">
-          <OrangeBlurb className="orange-blurb" />
-          <PurpleBlurb className="purple-blurb" />
-          <GreenBlurb className="green-blurb" />
-        </div>
-      </body>
-    </html>
+    <SceneProvider>
+      <html lang="en">
+        <body className={inter.className}>
+          <Header />
+          {children}
+          <Footer />
+          <div className="bg-background -z-1">
+            <OrangeBlurb className="orange-blurb" />
+            <PurpleBlurb className="purple-blurb" />
+            <GreenBlurb className="green-blurb" />
+          </div>
+        </body>
+      </html>
+    </SceneProvider>
   )
 }

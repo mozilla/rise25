@@ -245,7 +245,10 @@ const winnerGroups = [
     },
 ]
 
-export const Winners = () => {
+export const Winners = ({ enabled }: { enabled: boolean }) => {
+    if (!enabled) {
+        return <></>
+    }
     return (
         <div id="winners" className={` text-white section section--xl`}>
             <div className="container container--2xl">
