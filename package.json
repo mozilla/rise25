@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.10",
+    "gsap": "^3.12.2",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest"

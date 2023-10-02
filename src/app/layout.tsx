@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <SceneProvider>
       <html lang="en">
-        <body className={`${inter.className} min-h-screen overflow-hidden`}>
+        <body className={`${inter.className} min-h-screen overflow-x-hidden`}>
           <Header />
           {children}
           <Footer />
