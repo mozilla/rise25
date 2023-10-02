@@ -201,7 +201,7 @@ p {
 }
 
 .card {
-  @apply w-full aspect-[33/60] relative bg-secondary min-w-[340px] lg:min-w-[400px];
+  @apply w-full aspect-[33/60] relative bg-secondary min-w-[340px] lg:w-[400px] will-change-transform;
 }
 
 .group-card {
@@ -222,6 +222,10 @@ p {
 
 .group-navigation-item {
   @apply text-sm;
+}
+
+.footer {
+  @apply fixed bottom-0;
 }
 
 .footer a {

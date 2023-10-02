@@ -12,11 +12,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const Winners = ({ enabled }: { enabled: boolean }) => {
     const { winnerGroups } = data;
-    const slider = useRef(null);
+    const slider = useRef<HTMLDivElement | null>(null);
 
     useLayoutEffect(() => {
         let ctx = gsap.context(() => {
-            if (enabled) {
+            if (enabled && slider.current) {
                 const slideContainer = slider.current;
                 const slideItems = slideContainer.querySelectorAll('.card');
 
@@ -27,12 +27,13 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
                         trigger: slideContainer,
                         pin: true,
                         scrub: true,
+                        markers: true,
                         snap: 1 / (slideItems.length - 1), // Calculate snap points
                         end: () => `+=${slideContainer.offsetWidth}`, // Adjust the end value based on container width
                     },
                 });
             }
-        }, slider.current); // Use slider.current to access the DOM element
+        }, slider);
         return () => ctx.revert();
     }, [enabled]);
 
