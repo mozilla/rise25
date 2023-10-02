@@ -1,6 +1,6 @@
 'use client'
 
-import React from "react"
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Instagram, Twitter, Youtube, Web } from "../icons"
@@ -246,9 +246,16 @@ const winnerGroups = [
 ]
 
 export const Winners = ({ enabled }: { enabled: boolean }) => {
+
+    document.addEventListener('scroll', function () {
+        // horizontalScroll.scrollLeft = verticalScroll.scrollTop;
+        console.log("IUIHUHUIHIU")
+    });
+
     if (!enabled) {
         return <></>
     }
+
     return (
         <div id="winners" className={` text-white section section--xl`}>
             <div className="container container--2xl">
