@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useEffect, useLayoutEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import gsap from "gsap";
@@ -10,47 +10,55 @@ import { data } from '@/app/lib/data';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const scrollMultiplier = 1.5;
-
-const animateSlider = (enabled: boolean, slider: React.RefObject<HTMLDivElement | null>) => {
-    let ctx = gsap.context(() => {
-        if (enabled && slider.current) {
-            const slideContainer = slider.current;
-            const slideItems = gsap.utils.toArray('.card');
-
-            // console.log(slideItems.length)
-            // console.log(slider.current.offsetWidth);
-            // console.log(slideItems[1].offsetWidth);
-
-            gsap.to(slideItems, {
-                xPercent: -100 * (slideItems.length * scrollMultiplier), // Calculate total width based on the number of items
-                ease: 'none',
-                scrollTrigger: {
-                    markers: true,
-                    trigger: slideContainer,
-                    pin: true,
-                    scrub: true,
-                    snap: 1 / (slideItems.length - 1), // Calculate snap points
-                    start: 'top 112',
-                    end: () => `+=${slideContainer.offsetWidth}`, // Adjust the end value based on container width
-                },
-            });
-        }
-    }, slider);
-    return () => ctx.revert();
-};
-
 export const Winners = ({ enabled }: { enabled: boolean }) => {
+    const scrollMultiplier = 1.5;
     const { winnerGroups } = data;
     const slider = useRef<HTMLDivElement | null>(null);
+
+    const animateSlider = (enabled: boolean, slider: React.RefObject<HTMLDivElement | null>) => {
+        let ctx = gsap.context(() => {
+            if (enabled && slider.current) {
+                const slideContainer = slider.current;
+                const slideItems = slideContainer.querySelectorAll('.card');
+
+                gsap.to(slideItems, {
+                    xPercent: -100 * (slideItems.length * scrollMultiplier), // Calculate total width based on the number of items
+                    ease: 'none',
+                    scrollTrigger: {
+                        markers: true,
+                        trigger: slideContainer,
+                        pin: true,
+                        scrub: true,
+                        snap: 1 / (slideItems.length - 1), // Calculate snap points
+                        start: 'top 112',
+                        end: () => `+=${slideContainer.offsetWidth}`, // Adjust the end value based on container width
+                    },
+                });
+            }
+        }, slider);
+        return () => ctx.revert();
+    };
+
+    const updateAnimationOnResize = () => {
+        // Destroy the existing animation and re-animate on resize
+        gsap.timeline().clear();
+        animateSlider(enabled, slider);
+    };
+
+    useEffect(() => {
+        // Attach a window resize event listener
+        window.addEventListener('resize', updateAnimationOnResize);
+        return () => {
+            // Remove the event listener when the component unmounts
+            window.removeEventListener('resize', updateAnimationOnResize);
+        };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     useLayoutEffect(() => {
         animateSlider(enabled, slider);
     }, [enabled]);
 
-    const scrollToCard = (index) => {
-
-    }
 
     if (!enabled) {
         return <></>
