@@ -25,12 +25,12 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
                     xPercent: -100 * (slideItems.length * scrollMultiplier), // Calculate total width based on the number of items
                     ease: 'none',
                     scrollTrigger: {
-                        markers: true,
+                        // markers: true,
                         trigger: slideContainer,
                         pin: true,
                         scrub: true,
                         snap: 1 / (slideItems.length - 1), // Calculate snap points
-                        start: 'top 112',
+                        start: 'top top',
                         end: () => `+=${slideContainer.offsetWidth}`, // Adjust the end value based on container width
                     },
                 });
@@ -65,7 +65,7 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
     }
 
     return (
-        <div id="winners" className={` text-white section section--xl`} ref={slider}>
+        <div id="winners" className={` text-white section section--xl fixed top-0 w-full flex items-center min-h-screen`} ref={slider}>
             <div className="container container--2xl">
                 <div className="group-navigation">
                     {winnerGroups.map((group, groupIndex) => (
