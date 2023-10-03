@@ -3,6 +3,7 @@
 import React from "react"
 import Link from 'next/link';
 import { useScene } from '../../context/scene-context';
+import { gtag } from "@/app/lib";
 
 export const Hero = ({ enabled, title }: { enabled: boolean, title: string }) => {
     const { setScene } = useScene();
@@ -19,6 +20,10 @@ export const Hero = ({ enabled, title }: { enabled: boolean, title: string }) =>
                     <Link className="btn btn-light" href="#" onClick={(e) => {
                         e.preventDefault();
                         setScene(2);
+                        gtag({
+                            action: `Link to: winners`,
+                            category: "See winners button click"
+                        })
                     }}>See the winners</Link>
                 </div>
             </div>

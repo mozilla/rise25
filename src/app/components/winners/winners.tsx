@@ -7,6 +7,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { ArrowRight, Instagram, Twitter, Youtube, Web } from "../icons"
 import { data } from '@/app/lib/data';
+import { gtag } from "@/app/lib";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -61,6 +62,17 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
         }
     }
 
+    const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>, index: number, location: string) => {
+        event.preventDefault();
+
+        onSlideTo(index);
+
+        gtag({
+            action: `Link to: ${location}`,
+            category: "Cards nav item click"
+        })
+    }
+
     useEffect(() => {
         // Attach a window resize event listener
         window.addEventListener('resize', updateAnimationOnResize);
@@ -88,7 +100,7 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
                     {winnerGroups.map((group, groupIndex) => (
                         <React.Fragment key={groupIndex}>
                             <div className="group-navigation-item" key={groupIndex}>
-                                <Link className="group-card-link" href={`#${group.group.slug}`} onClick={() => onSlideTo(groupIndex)}>
+                                <Link className="group-card-link" href={`/`} onClick={(e) => handleLinkClick(e, groupIndex, group.group.name)}>
                                     {group.group.name}
                                 </Link>
                             </div>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script';
 import { SceneProvider } from './context/scene-context'
 import { PurpleBlurb, OrangeBlurb, GreenBlurb } from './components/icons'
 import { Footer } from './components/footer'
@@ -21,6 +22,15 @@ export default function RootLayout({
   return (
     <SceneProvider>
       <html lang="en">
+        <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-HY8GW0L2DH" />
+        <Script strategy="afterInteractive" id="google-analytics">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-HY8GW0L2DH');
+        `}
+        </Script>
         <body className={`${inter.className} h-screen overflow-x-hidden overflow-y-scroll`}>
           <Header />
           {children}
