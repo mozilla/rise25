@@ -16,16 +16,18 @@ const animateSlider = (enabled: boolean, slider: React.RefObject<HTMLDivElement 
             const slideContainer = slider.current;
             const slideItems = gsap.utils.toArray('.card');
 
-            console.log(slideItems)
+            console.log(slideItems.length)
+            console.log(slider.current.offsetWidth);
+            console.log(slideItems[1].offsetWidth);
 
             gsap.to(slideItems, {
-                xPercent: -100 * (slideItems.length - 1), // Calculate total width based on the number of items
+                xPercent: -100 * (slideItems.length + 6), // Calculate total width based on the number of items
                 ease: 'none',
                 scrollTrigger: {
+                    markers: true,
                     trigger: slideContainer,
                     pin: true,
                     scrub: true,
-                    markers: true,
                     snap: 1 / (slideItems.length - 1), // Calculate snap points
                     end: () => `+=${slideContainer.offsetWidth}`, // Adjust the end value based on container width
                 },
