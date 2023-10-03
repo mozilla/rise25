@@ -232,7 +232,7 @@ p {
   @apply underline hover:text-primary;
 }
 
-// we need to keep this for some reason, otherwise horizontal scroll doesn't work
+/* we need to keep this for some reason, otherwise horizontal scroll doesn't work */
 .gsap-marker-end,
 .gsap-marker-start,
 .gsap-scroller-end,
