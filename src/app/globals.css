@@ -231,3 +231,13 @@ p {
 .footer a {
   @apply underline hover:text-primary;
 }
+
+// we need to keep this for some reason, otherwise horizontal scroll doesn't work
+.gsap-marker-end,
+.gsap-marker-start,
+.gsap-scroller-end,
+.gsap-scroller-start,
+.gsap-marker-scroller-end,
+.gsap-marker-scroller-start {
+  opacity: 0 !important;
+}

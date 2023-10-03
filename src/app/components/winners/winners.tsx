@@ -35,6 +35,7 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
                     ease: 'none',
                     scrollTrigger: {
                         trigger: slideContainer,
+                        markers: true, // we need to keep this for some reason, otherwise horizontal scroll doesn't work
                         pin: true,
                         scrub: true,
                         snap: 1 / (slideItems.length - 1), // Calculate snap points
