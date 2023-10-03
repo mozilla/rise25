@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 export const Winners = ({ enabled }: { enabled: boolean }) => {
     const { winnerGroups } = data;
     const slider = useRef<HTMLDivElement | null>(null);
-    const sliderWrapper = useRef<HTMLDivElement | null>(null);
+    let cardsIndex = 0;
 
     const animateSlider = (enabled: boolean, slider: React.RefObject<HTMLDivElement | null>) => {
         let ctx = gsap.context(() => {
@@ -65,6 +65,7 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
         return <></>
     }
 
+
     return (
         <div id="winners" className={` text-white section section--xl fixed top-0 w-full flex items-center min-h-screen`} ref={slider}>
             <div className="container container--2xl">
@@ -82,39 +83,45 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
                 </div>
 
                 <div className="winners" >
-                    {winnerGroups.map((group, groupIndex) => (
-                        <div key={groupIndex} className="winner-group">
-                            {group.group && (
-                                <div id={group.group.slug} className="group-card card">
-                                    <div className={`group-card-inner`}>
-                                        <h3 className={`group-card-title`}>{group.group.name} <ArrowRight className={`h-12 text-[140%]`} />
-                                        </h3>
-                                        <p className="text-lg">{group.group.description}</p>
-                                    </div>
-                                    <Image className={`z-0`} src={group.group.imgSrc} layout="fill" objectFit="cover" alt={group.group.name} />
-                                </div>
-                            )}
-                            {group.winners.map((winner, winnerIndex) => (
-                                <div key={winnerIndex} className="winner card group">
-                                    <div className="winner-name">{winner.title}</div>
-                                    <div className="winner-info">
-                                        <div className="winner-social">
-                                            {winner.socialMedia.map((social, socialIndex) => (
-                                                <a className="winner-social-link" key={socialIndex} href={social.url} target="_blank" rel="noopener noreferrer">
-                                                    {social.platform === "Instagram" && <Instagram />}
-                                                    {social.platform === "Twitter" && <Twitter />}
-                                                    {social.platform === "YouTube" && <Youtube />}
-                                                    {social.platform === "Web" && <Web />}
-                                                </a>
-                                            ))}
+                    {winnerGroups.map((group, groupIndex) => {
+                        cardsIndex++;
+                        return (
+                            <div key={groupIndex} className="winner-group">
+                                {group.group && (
+                                    <div id={group.group.slug} data-id={cardsIndex} className="group-card card">
+                                        <div className={`group-card-inner`}>
+                                            <h3 className={`group-card-title`}>{group.group.name} <ArrowRight className={`h-12 text-[140%]`} />
+                                            </h3>
+                                            <p className="text-lg">{group.group.description}</p>
                                         </div>
-                                        <div className="winner-bio" dangerouslySetInnerHTML={{ __html: winner.bio }} />
+                                        <Image className={`z-0`} src={group.group.imgSrc} layout="fill" objectFit="cover" alt={group.group.name} />
                                     </div>
-                                    <Image src={winner.imgSrc} layout="fill" objectFit="cover" alt={winner.title} />
-                                </div>
-                            ))}
-                        </div>
-                    ))}
+                                )}
+                                {group.winners.map((winner, winnerIndex) => {
+                                    cardsIndex++
+                                    return (
+                                        <div key={winnerIndex} data-id={cardsIndex} className="winner card group">
+                                            <div className="winner-name">{winner.title}</div>
+                                            <div className="winner-info">
+                                                <div className="winner-social">
+                                                    {winner.socialMedia.map((social, socialIndex) => (
+                                                        <a className="winner-social-link" key={socialIndex} href={social.url} target="_blank" rel="noopener noreferrer">
+                                                            {social.platform === "Instagram" && <Instagram />}
+                                                            {social.platform === "Twitter" && <Twitter />}
+                                                            {social.platform === "YouTube" && <Youtube />}
+                                                            {social.platform === "Web" && <Web />}
+                                                        </a>
+                                                    ))}
+                                                </div>
+                                                <div className="winner-bio" dangerouslySetInnerHTML={{ __html: winner.bio }} />
+                                            </div>
+                                            <Image src={winner.imgSrc} layout="fill" objectFit="cover" alt={winner.title} />
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                        )
+                    })}
                 </div>
             </div>
         </div>
