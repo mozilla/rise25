@@ -17,8 +17,10 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
     const slider = useRef<HTMLDivElement | null>(null);
     let cardsIndex = 0;
 
-    const createCardsGroupRefs = (card: HTMLDivElement, index: number) => {
-        (cardGroups.current as HTMLDivElement[])[index] = card;
+    const createCardsGroupRefs = (card: HTMLDivElement | null, index: number) => {
+        if (card) {
+            (cardGroups.current as HTMLDivElement[])[index] = card;
+        }
     };
 
     const animateSlider = (enabled: boolean, slider: React.RefObject<HTMLDivElement | null>) => {
@@ -84,7 +86,9 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
     }, []);
 
     useLayoutEffect(() => {
-        animateSlider(enabled, slider);
+        if (enabled && slider.current) {
+            animateSlider(enabled, slider);
+        }
     }, [enabled]);
 
 
