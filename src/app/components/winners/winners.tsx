@@ -12,8 +12,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const Winners = ({ enabled }: { enabled: boolean }) => {
     const { winnerGroups } = data;
+    const cardGroups = useRef<HTMLDivElement[]>([]);
     const slider = useRef<HTMLDivElement | null>(null);
     let cardsIndex = 0;
+
+    const createCardsGroupRefs = (card: HTMLDivElement, index: number) => {
+        (cardGroups.current as HTMLDivElement[])[index] = card;
+    };
 
     const animateSlider = (enabled: boolean, slider: React.RefObject<HTMLDivElement | null>) => {
         let ctx = gsap.context(() => {
@@ -46,6 +51,17 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
         animateSlider(enabled, slider);
     };
 
+    const onSlideTo = (index: number) => {
+        if (cardGroups.current.length > index && cardGroups.current[index]) {
+            const slideItems = gsap.utils.toArray<HTMLDivElement>('.card');
+            const currentSlideIndex = Number(cardGroups.current[index].dataset.id);
+            gsap.to(slideItems, {
+                xPercent: -100 * (currentSlideIndex - 1),
+                ease: 'none',
+            })
+        }
+    }
+
     useEffect(() => {
         // Attach a window resize event listener
         window.addEventListener('resize', updateAnimationOnResize);
@@ -73,7 +89,7 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
                     {winnerGroups.map((group, groupIndex) => (
                         <React.Fragment key={groupIndex}>
                             <div className="group-navigation-item" key={groupIndex}>
-                                <Link className="group-card-link" href={`#${group.group.slug}`}>
+                                <Link className="group-card-link" href={`#${group.group.slug}`} onClick={() => onSlideTo(groupIndex)}>
                                     {group.group.name}
                                 </Link>
                             </div>
@@ -88,7 +104,7 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
                         return (
                             <div key={groupIndex} className="winner-group">
                                 {group.group && (
-                                    <div id={group.group.slug} data-id={cardsIndex} className="group-card card">
+                                    <div id={group.group.slug} data-id={cardsIndex} className="group-card card" ref={(e) => createCardsGroupRefs(e, groupIndex)}>
                                         <div className={`group-card-inner`}>
                                             <h3 className={`group-card-title`}>{group.group.name} <ArrowRight className={`h-12 text-[140%]`} />
                                             </h3>
