@@ -10,31 +10,37 @@ import { data } from '@/app/lib/data';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const animateSlider = (enabled: boolean, slider: React.RefObject<HTMLDivElement | null>) => {
+    let ctx = gsap.context(() => {
+        if (enabled && slider.current) {
+            const slideContainer = slider.current;
+            const slideItems = gsap.utils.toArray('.card');
+
+            console.log(slideItems)
+
+            gsap.to(slideItems, {
+                xPercent: -100 * (slideItems.length - 1), // Calculate total width based on the number of items
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: slideContainer,
+                    pin: true,
+                    scrub: true,
+                    markers: true,
+                    snap: 1 / (slideItems.length - 1), // Calculate snap points
+                    end: () => `+=${slideContainer.offsetWidth}`, // Adjust the end value based on container width
+                },
+            });
+        }
+    }, slider);
+    return () => ctx.revert();
+};
+
 export const Winners = ({ enabled }: { enabled: boolean }) => {
     const { winnerGroups } = data;
     const slider = useRef<HTMLDivElement | null>(null);
 
     useLayoutEffect(() => {
-        let ctx = gsap.context(() => {
-            if (enabled && slider.current) {
-                const slideContainer = slider.current;
-                const slideItems = slideContainer.querySelectorAll('.card');
-
-                gsap.to(slideItems, {
-                    xPercent: -100 * (slideItems.length - 1), // Calculate total width based on the number of items
-                    ease: 'none',
-                    scrollTrigger: {
-                        trigger: slideContainer,
-                        pin: true,
-                        scrub: true,
-                        markers: true,
-                        snap: 1 / (slideItems.length - 1), // Calculate snap points
-                        end: () => `+=${slideContainer.offsetWidth}`, // Adjust the end value based on container width
-                    },
-                });
-            }
-        }, slider);
-        return () => ctx.revert();
+        animateSlider(enabled, slider);
     }, [enabled]);
 
     if (!enabled) {

@@ -166,7 +166,7 @@ p {
  * Winners
  */
 .winners {
-  @apply flex gap-4 overflow-x-scroll;
+  @apply flex gap-4;
 }
 
 .winner-group {
