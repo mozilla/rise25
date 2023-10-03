@@ -31,7 +31,6 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
                     xPercent: -100 * (slideItems.length), // Calculate total width based on the number of items
                     ease: 'none',
                     scrollTrigger: {
-                        markers: true,
                         trigger: slideContainer,
                         pin: true,
                         scrub: true,
