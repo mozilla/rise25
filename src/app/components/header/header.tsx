@@ -9,7 +9,7 @@ export const Header = () => {
     const { setScene } = useScene();
 
     return (
-        <header className="header sticky top-0 z-50 w-full ">
+        <header className="header fixed top-0 z-50 w-full ">
 
             <div className="px-4 sm:px-6 container container--2xl">
                 <div className="flex items-center justify-between py-6 gap-4">
