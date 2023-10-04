@@ -5,17 +5,20 @@ import Image from 'next/image';
 import Link from 'next/link';
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { ArrowRight, Instagram, Twitter, Youtube, Web } from "../icons"
+import { ArrowRight } from "../icons"
 import { data } from '@/app/lib/data';
 import { gtag } from "@/app/lib";
+import { useWindowSize } from '@/app/hook/use-window-size';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const Winners = ({ enabled }: { enabled: boolean }) => {
+    let cardsIndex = 0;
+    const gsapInitialBreakpoint = 640;
+    const { width } = useWindowSize();
     const { winnerGroups } = data;
     const cardGroups = useRef<HTMLDivElement[]>([]);
     const slider = useRef<HTMLDivElement | null>(null);
-    let cardsIndex = 0;
 
     const createCardsGroupRefs = (card: HTMLDivElement | null, index: number) => {
         if (card) {
@@ -29,20 +32,25 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
                 const slideContainer = slider.current;
                 const slideItems = gsap.utils.toArray<HTMLDivElement>('.card');
                 const slideContainerWidth = slideItems[0].offsetWidth * slideItems.length;
+                //responsive
+                let mm = gsap.matchMedia();
 
-                gsap.to(slideItems, {
-                    xPercent: -100 * (slideItems.length), // Calculate total width based on the number of items
-                    ease: 'none',
-                    scrollTrigger: {
-                        trigger: slideContainer,
-                        markers: true, // we need to keep this for some reason, otherwise horizontal scroll doesn't work
-                        pin: true,
-                        scrub: true,
-                        snap: 1 / (slideItems.length - 1), // Calculate snap points
-                        start: 'top top',
-                        end: () => `+=${slideContainerWidth}`, // Adjust the end value based on container width
-                    },
+                mm.add(`(min-width: ${gsapInitialBreakpoint.toString()}px)`, () => {
+                    gsap.to(slideItems, {
+                        xPercent: -100 * (slideItems.length), // Calculate total width based on the number of items
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: slideContainer,
+                            markers: true, // we need to keep this for some reason, otherwise horizontal scroll doesn't work
+                            pin: true,
+                            scrub: true,
+                            snap: 1 / (slideItems.length - 1), // Calculate snap points
+                            start: 'top top',
+                            end: () => `+=${slideContainerWidth}`, // Adjust the end value based on container width
+                        },
+                    });
                 });
+
             }
         }, slider);
         return () => ctx.revert();
@@ -66,14 +74,18 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
     }
 
     const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>, index: number, location: string) => {
-        event.preventDefault();
-
-        onSlideTo(index);
-
         gtag({
             action: `Link to: ${location}`,
             category: "Cards nav item click"
         })
+
+        if (width <= gsapInitialBreakpoint) {
+            console.log("Screen size is mobile")
+            return;
+        }
+
+        event.preventDefault();
+        onSlideTo(index);
     }
 
     useEffect(() => {
@@ -97,16 +109,15 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
         return <></>
     }
 
-
     return (
-        <div id="winners" className={` text-white section section--xl fixed top-0 w-full flex items-center min-h-screen`} ref={slider}>
+        <div id="winners" className={`winners-wrap text-white section section--xl w-full flex items-center min-h-screen`} ref={slider}>
             <div className="container container--2xl">
                 <div className="group-navigation">
-                    {winnerGroups.map((group, groupIndex) => (
+                    {winnerGroups.map((item, groupIndex) => (
                         <React.Fragment key={groupIndex}>
                             <div className="group-navigation-item" key={groupIndex}>
-                                <Link className="group-card-link" href={`/`} onClick={(e) => handleLinkClick(e, groupIndex, group.group.name)}>
-                                    {group.group.name}
+                                <Link className="group-card-link" href={`#${item.group.slug}`} onClick={(e) => handleLinkClick(e, groupIndex, item.group.name)}>
+                                    {item.group.name}
                                 </Link>
                             </div>
                             {groupIndex < winnerGroups.length - 1 && <span> / </span>}
@@ -114,37 +125,27 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
                     ))}
                 </div>
 
-                <div className="winners" >
-                    {winnerGroups.map((group, groupIndex) => {
+                <div className="winners">
+                    {winnerGroups.map((item, groupIndex) => {
                         cardsIndex++;
                         return (
                             <div key={groupIndex} className="winner-group">
-                                {group.group && (
-                                    <div id={group.group.slug} data-id={cardsIndex} className="group-card card" ref={(e) => createCardsGroupRefs(e, groupIndex)}>
+                                {item.group && (
+                                    <div id={item.group.slug} data-id={cardsIndex} className="group-card card" ref={(e) => createCardsGroupRefs(e, groupIndex)}>
                                         <div className={`group-card-inner`}>
-                                            <h3 className={`group-card-title`}>{group.group.name} <ArrowRight className={`h-12 text-[140%]`} />
+                                            <h3 className={`group-card-title`}>{item.group.name} <ArrowRight className={`h-12 text-[140%]`} />
                                             </h3>
-                                            <p className="text-lg">{group.group.description}</p>
+                                            <p className="text-lg">{item.group.description}</p>
                                         </div>
-                                        <Image className={`z-0`} src={group.group.imgSrc} layout="fill" objectFit="cover" alt={group.group.name} />
+                                        <Image className={`z-0`} src={item.group.imgSrc} layout="fill" objectFit="cover" alt={item.group.name} />
                                     </div>
                                 )}
-                                {group.winners.map((winner, winnerIndex) => {
+                                {item.winners.map((winner, winnerIndex) => {
                                     cardsIndex++
                                     return (
                                         <div key={winnerIndex} data-id={cardsIndex} className="winner card group">
                                             <div className="winner-name">{winner.title}</div>
                                             <div className="winner-info">
-                                                <div className="winner-social">
-                                                    {/* {winner.socialMedia.map((social, socialIndex) => (
-                                                        <a className="winner-social-link" key={socialIndex} href={social.url} target="_blank" rel="noopener noreferrer">
-                                                            {social.platform === "Instagram" && <Instagram />}
-                                                            {social.platform === "Twitter" && <Twitter />}
-                                                            {social.platform === "YouTube" && <Youtube />}
-                                                            {social.platform === "Web" && <Web />}
-                                                        </a>
-                                                    ))} */}
-                                                </div>
                                                 <div className="winner-bio" dangerouslySetInnerHTML={{ __html: winner.bio }} />
                                             </div>
                                             <Image src={winner.imgSrc} layout="fill" objectFit="cover" alt={winner.title} />
