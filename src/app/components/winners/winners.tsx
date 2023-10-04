@@ -14,11 +14,20 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const Winners = ({ enabled }: { enabled: boolean }) => {
     let cardsIndex = 0;
-    const gsapInitialBreakpoint = 640;
-    const { width } = useWindowSize();
+    const { height, width } = useWindowSize();
     const { winnerGroups } = data;
     const cardGroups = useRef<HTMLDivElement[]>([]);
     const slider = useRef<HTMLDivElement | null>(null);
+    const cardsGap = 20;
+    const gsapInitialBreakpoint = 768;
+    let scrollMultiplier = 1;
+    if (width / height < 1) {
+        scrollMultiplier = 3.5;
+    }
+
+    if (width / height > 1 && width / height < 1.6) {
+        scrollMultiplier = 1.5;
+    }
 
     const createCardsGroupRefs = (card: HTMLDivElement | null, index: number) => {
         if (card) {
@@ -29,9 +38,10 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
     const animateSlider = (enabled: boolean, slider: React.RefObject<HTMLDivElement | null>) => {
         let ctx = gsap.context(() => {
             if (enabled && slider.current) {
+
                 const slideContainer = slider.current;
                 const slideItems = gsap.utils.toArray<HTMLDivElement>('.card');
-                const slideContainerWidth = slideItems[0].offsetWidth * slideItems.length;
+                const slideContainerWidth = ((slideItems[0].offsetWidth * slideItems.length) + (cardsGap * slideItems.length)) * scrollMultiplier;
                 //responsive
                 let mm = gsap.matchMedia();
 

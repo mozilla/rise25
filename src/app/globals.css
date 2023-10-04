@@ -237,7 +237,7 @@ p {
 }
 
 .footer {
-  @apply sm:fixed sm:bottom-0;
+  @apply md:fixed md:bottom-0;
 }
 
 .footer a {
