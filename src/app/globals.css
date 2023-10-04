@@ -170,9 +170,9 @@ p {
  * Winners
  */
 
- .winners-wrap {
+.winners-wrap {
   @apply mt-14 sm:mt-0 sm:fixed sm:top-0;
- }
+}
 .winners {
   @apply sm:flex sm:gap-4;
 }
@@ -224,7 +224,7 @@ p {
   @apply type-heading-3 p-4 bg-white bg-opacity-30 backdrop-blur-md drop-shadow-sm text-black flex gap-4 items-center;
 
   svg {
-    @apply hidden sm:block
+    @apply hidden sm:block;
   }
 }
 
