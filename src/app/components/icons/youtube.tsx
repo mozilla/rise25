@@ -9,5 +9,4 @@ export const Youtube = ({ className }: { className?: string }) => (
             </clipPath>
         </defs>
     </svg>
-
 )
