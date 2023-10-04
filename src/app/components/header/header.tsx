@@ -47,7 +47,7 @@ export const Header = () => {
                             />
                         </Link>
                     </div>
-                    <Link className="ml-8" href="/" onClick={(e) => handleLinkClick(e, 2, 'See the winners')}>See the winners</Link>
+                    <Link href="/" onClick={(e) => handleLinkClick(e, 2, 'See the winners')}>See the winners</Link>
                 </div>
             </div>
 
