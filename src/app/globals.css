@@ -47,7 +47,7 @@ body {
 
 h1,
 .type-heading-1 {
-  @apply text-6xl lg:text-9xl tracking-tight leading-tight font-extrabold;
+  @apply text-4xl md:text-6xl lg:text-8xl tracking-tight leading-snug font-extrabold;
 }
 
 h2,
@@ -158,6 +158,10 @@ p {
   transform: translate(-10%, -10%);
 }
 
+.header {
+  @apply max-sm:bg-black max-sm:fixed max-sm:top-0;
+}
+
 .header a {
   @apply text-xs lg:text-lg;
 }
@@ -165,23 +169,27 @@ p {
 /**
  * Winners
  */
+
+.winners-wrap {
+  @apply mt-14 sm:mt-0 sm:fixed sm:top-0;
+}
 .winners {
-  @apply flex gap-4;
+  @apply sm:flex sm:gap-4;
 }
 
 .winner-group {
-  @apply flex gap-4;
+  @apply sm:flex sm:gap-4;
 }
 
 .winner {
 }
 
 .winner-name {
-  @apply z-20 absolute bottom-0 left-0 w-full bg-gray text-black p-4 type-heading-4 text-center group-hover:bg-transparent group-hover:text-white;
+  @apply z-20 absolute bottom-0 left-0 w-full bg-neutral-900 text-white p-4 type-heading-4 text-center;
 }
 
 .winner-info {
-  @apply pt-6 px-6 pb-16 inset-0 bg-overlay backdrop-blur absolute z-10 hidden group-hover:block space-y-8;
+  @apply pt-6 px-6 pb-20 min-h-[400px] sm:h-auto sm:pb-16 inset-0 bg-neutral-900 bg-opacity-80 backdrop-blur relative sm:absolute z-10 space-y-8 opacity-0 hover:opacity-100 transition ease-in-out duration-300;
 }
 
 .winner-social {
@@ -201,11 +209,11 @@ p {
 }
 
 .card {
-  @apply w-full aspect-[3/4] 2xl:aspect-[33/60] relative bg-secondary min-w-[340px] lg:w-[400px] will-change-transform;
+  @apply w-full sm:aspect-[33/60] relative bg-secondary min-w-[340px] will-change-transform mb-10 sm:mb-0;
 }
 
 .group-card {
-  @apply flex px-8 py-12;
+  @apply flex px-8 pt-12 pb-16;
 }
 
 .group-card-inner {
@@ -213,7 +221,11 @@ p {
 }
 
 .group-card-title {
-  @apply type-heading-2 p-4 bg-gray text-black flex gap-4 items-center;
+  @apply type-heading-3 p-4 bg-white bg-opacity-30 backdrop-blur-md drop-shadow-sm text-black flex gap-4 items-center;
+
+  svg {
+    @apply hidden sm:block;
+  }
 }
 
 .group-navigation {
@@ -225,7 +237,7 @@ p {
 }
 
 .footer {
-  @apply fixed bottom-0;
+  @apply sm:fixed sm:bottom-0;
 }
 
 .footer a {
