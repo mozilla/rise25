@@ -2,7 +2,7 @@
 
 import React, { useRef } from 'react';
 import Image from 'next/image';
-import { Close, Info } from "../icons"
+import { Info } from "../icons"
 import { data } from '@/app/lib/data';
 import { gtag } from "@/app/lib";
 
