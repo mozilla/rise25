@@ -137,7 +137,7 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
                                             <div className="winner-info">
                                                 <div className="winner-social">
                                                     {winner.socialMedia.map((social, socialIndex) => (
-                                                        <a className="winner-social-link" key={socialIndex} href={social.url} target="_blank" rel="noopener noreferrer">
+                                                        <a className="winner-social-link" key={socialIndex} href={social.url ? social.url : `#`} target="_blank" rel="noopener noreferrer">
                                                             {social.platform === "Instagram" && <Instagram />}
                                                             {social.platform === "Twitter" && <Twitter />}
                                                             {social.platform === "YouTube" && <Youtube />}
