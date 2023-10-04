@@ -62,7 +62,7 @@ export const data = {
         },
         {
           imgSrc: "/headshots/headshot-christian.jpg",
-          title: "Christian (Chris) Smalls",
+          title: "Chris Smalls",
           bio: "<p>Chris Smalls is the founder and president of the Amazon Labor Union, an independent, democratic, worker-led labor union at Amazon in Staten Island. He is also the founder of The Congress of Essential Workers (TCOEW), a nationwide collective of essential workers and allies fighting for better working conditions, better wages, and a better world. Smalls was formerly an Amazon warehouse supervisor, helping open three major warehouses in New York, New Jersey, and Connecticut during his five years with the company, but he was fired in 2020 after organizing a protest against the company’s unsafe pandemic conditions. Smalls has been profiled by media outlets worldwide, including The New York Times, USA Today, The Guardian, The Wall Street Journal, CNBC, CBC Radio, Salon, and Jacobin.</p><p>He lives in Hackensack, New Jersey.</p>",
           socialMedia: [
             // {
@@ -79,7 +79,7 @@ export const data = {
         },
         {
           imgSrc: "/headshots/headshot-larissa.jpg",
-          title: "Larissa (Larz) May",
+          title: "Larissa May",
           bio: "<p>Larissa May (Larz) is a digital wellbeing pioneer and the founder of #HalfTheStory (HTS), the first non-profit dedicated to empowering the next generation’s healthy relationship with social media. HTS' evidence-based program, Social Media U teaches key digital metacognition and emotional regulation skills, while empowering young people to understand and advocate for their digital wellbeing. Larz has become the face of the rapidly growing movement towards digital wellness, leading the global narrative around policy and youth-centric advocacy in the US, UK, EU, and UAE. Prior to #HalfTheStory, Larz helped build some of today’s most buzzy D2C brands, including Kin Euphorics and Otherland. Larz has been featured in TIME, Forbes, Refinery29, Good Morning America, Business Insider, and NBC.</p>",
           socialMedia: [
             // {
@@ -299,7 +299,7 @@ export const data = {
       winners: [
         {
           imgSrc: "/headshots/headshot-abbie.jpg",
-          title: "Abbie Richards*",
+          title: "Abbie Richards",
           bio: "<p>Abbie Richards is a TikToker and TikTok misinformation researcher. She specializes in understanding how misinformation, conspiracy theories, and extremism spread on TikTok and she creates educational content that explains these complex issues to a wider audience. She's amassed a multi-platform following of over half a million people who are interested in learning about these issues. Abbie is a senior video producer at Media Matters and is a co-founder of EcoTok, an environmental TikTok collective that specializes in social media-based climate communication. For her work as an online educator, Abbie was included in the Forbes 30 Under 30 2023 cohort and awarded the WIN WIN Youth Award for 2023.</p>",
           socialMedia: [
             // {
@@ -333,7 +333,7 @@ export const data = {
         },
         {
           imgSrc: "/headshots/headshot-vitus.jpg",
-          title: "Vitus Spehar",
+          title: "Vitus “V” Spehar",
           bio: "<p>V Spehar (they/them) is a Rochester-based citizen journalist and creator. Spehar launched Under the Desk News on TikTok in April 2020 with the aim to make news media less intimidating and easier to understand. Their one-minute segments (literally delivered from under a desk) have attracted a bipartisan audience of over 3 million people. Their reporting has taken them to the press room of the 2023 State of the Union to hosting the NBC's livestream of the Thanksgiving Day Parade to speaking at UNESCO summits. This year, V received a special achievement Webby for their concise and compassionate reporting.</p>",
           socialMedia: [
             // {
@@ -395,7 +395,7 @@ export const data = {
       winners: [
         {
           imgSrc: "/headshots/headshot-finn.jpg",
-          title: "Finn Myrstad",
+          title: "Finn Lützow-Holm Myrstad",
           bio: "<p>Finn Lützow-Holm Myrstad is the director of digital policy at the Norwegian Consumer Council (NCC), focusing on national and international issues related to privacy, IT security, artificial intelligence, deceptive design, telecommunication and more. He leads the development of more ethical digital policies and advocates for governments and companies to improve theirs. Some of Finn’s projects involve privacy and security challenges posed by internet-connected devices, user terms in apps, tech companies’ use of deceptive design and online tracking.</p><p>He holds an MSc in Politics and Government of the European Union from the London School of Economics (LSE) and an Executive MBA from Hult International Business School.</p>",
           socialMedia: [
             // {
