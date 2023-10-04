@@ -5,18 +5,20 @@ import Image from 'next/image';
 import Link from 'next/link';
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { ArrowRight, Instagram, Twitter, Youtube, Web } from "../icons"
+import { ArrowRight } from "../icons"
 import { data } from '@/app/lib/data';
 import { gtag } from "@/app/lib";
+import { useWindowSize } from '@/app/hook/use-window-size';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const Winners = ({ enabled }: { enabled: boolean }) => {
+    let cardsIndex = 0;
+    const gsapInitialBreakpoint = 640;
+    const { width } = useWindowSize();
     const { winnerGroups } = data;
     const cardGroups = useRef<HTMLDivElement[]>([]);
     const slider = useRef<HTMLDivElement | null>(null);
-    let cardsIndex = 0;
-    const gsapInitialBreakpoint = '640px';
 
     const createCardsGroupRefs = (card: HTMLDivElement | null, index: number) => {
         if (card) {
@@ -33,7 +35,7 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
                 //responsive
                 let mm = gsap.matchMedia();
 
-                mm.add(`(min-width: ${gsapInitialBreakpoint})`, () => {
+                mm.add(`(min-width: ${gsapInitialBreakpoint.toString()}px)`, () => {
                     gsap.to(slideItems, {
                         xPercent: -100 * (slideItems.length), // Calculate total width based on the number of items
                         ease: 'none',
@@ -72,14 +74,18 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
     }
 
     const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>, index: number, location: string) => {
-        event.preventDefault();
-
-        onSlideTo(index);
-
         gtag({
             action: `Link to: ${location}`,
             category: "Cards nav item click"
         })
+
+        if (width <= gsapInitialBreakpoint) {
+            console.log("Screen size is mobile")
+            return;
+        }
+
+        event.preventDefault();
+        onSlideTo(index);
     }
 
     useEffect(() => {
@@ -110,7 +116,7 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
                     {winnerGroups.map((item, groupIndex) => (
                         <React.Fragment key={groupIndex}>
                             <div className="group-navigation-item" key={groupIndex}>
-                                <Link className="group-card-link" href={`/`} onClick={(e) => handleLinkClick(e, groupIndex, item.group.name)}>
+                                <Link className="group-card-link" href={`#${item.group.slug}`} onClick={(e) => handleLinkClick(e, groupIndex, item.group.name)}>
                                     {item.group.name}
                                 </Link>
                             </div>
