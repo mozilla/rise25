@@ -11,7 +11,7 @@
   "dependencies": {
     "@tailwindcss/typography": "^0.5.10",
     "gsap": "^3.12.2",
-    "next": "latest",
+    "next": "^13.4.19",
     "react": "latest",
     "react-dom": "latest"
   },
