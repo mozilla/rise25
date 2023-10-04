@@ -31,7 +31,7 @@ export default function RootLayout({
             gtag('config', 'G-HY8GW0L2DH');
         `}
         </Script>
-        <body className={`${inter.className} h-screen overflow-x-hidden overflow-y-scroll`}>
+        <body className={`${inter.className}`}>
           <Header />
           {children}
           <Footer />
