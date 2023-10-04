@@ -2,10 +2,10 @@
 
 import React, { useEffect, useLayoutEffect, useRef } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+// import Link from 'next/link';
 // import gsap from "gsap";
 // import ScrollTrigger from "gsap/ScrollTrigger";
-import { ArrowRight } from "../icons"
+// import { ArrowRight } from "../icons"
 import { data } from '@/app/lib/data';
 import { gtag } from "@/app/lib";
 // import { useWindowSize } from '@/app/hook/use-window-size';
@@ -116,9 +116,9 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
                     {winnerGroups.map((item, groupIndex) => (
                         <React.Fragment key={groupIndex}>
                             <div className="group-navigation-item" key={groupIndex}>
-                                <Link className="group-card-link" href={`#${item.group.slug}`} onClick={(e) => handleLinkClick(e, groupIndex, item.group.name)}>
+                                <a className="group-card-link" href={`#${item.group.slug}`} onClick={(e) => handleLinkClick(e, groupIndex, item.group.name)}>
                                     {item.group.name}
-                                </Link>
+                                </a>
                             </div>
                             {groupIndex < winnerGroups.length - 1 && <span> / </span>}
                         </React.Fragment>
