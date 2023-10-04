@@ -136,14 +136,14 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
                                             <div className="winner-name">{winner.title}</div>
                                             <div className="winner-info">
                                                 <div className="winner-social">
-                                                    {winner.socialMedia.map((social, socialIndex) => (
-                                                        <a className="winner-social-link" key={socialIndex} href={social.url ? social.url : `#`} target="_blank" rel="noopener noreferrer">
+                                                    {/* {winner.socialMedia.map((social, socialIndex) => (
+                                                        <a className="winner-social-link" key={socialIndex} href={social.url} target="_blank" rel="noopener noreferrer">
                                                             {social.platform === "Instagram" && <Instagram />}
                                                             {social.platform === "Twitter" && <Twitter />}
                                                             {social.platform === "YouTube" && <Youtube />}
                                                             {social.platform === "Web" && <Web />}
                                                         </a>
-                                                    ))}
+                                                    ))} */}
                                                 </div>
                                                 <div className="winner-bio" dangerouslySetInnerHTML={{ __html: winner.bio }} />
                                             </div>

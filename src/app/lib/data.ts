@@ -5,7 +5,7 @@ export const data = {
         name: "Activists",
         slug: "activists",
         description:
-          "Meet the digital activists using technology to amplify voices, effect change, and inspire audiences globally. These pioneers advocate for a better world, on- and offline.",
+          "Meet the digital activists using technology to amplify voices, effect change, and inspire audiences globally. These pioneers advocate for a better world, on and offline.",
         imgSrc: "/gradients/card-gradient-1.png",
       },
       winners: [
