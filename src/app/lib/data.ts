@@ -219,9 +219,9 @@ export const data = {
           ],
         },
         {
-          imgSrc: "/headshots/headshot-default.jpg",
+          imgSrc: "/headshots/headshot-marlena.jpg",
           title: "Marlena Myles",
-          bio: "<p>Marlena Myles is a self-taught Native American (Spirit Lake Dakota/Mohegan/Muscogee) artist located in St Paul, Minnesota. Her art brings modernity to Indigenous history, languages and oral traditions while using the land as a teacher.</p><p>Her professional work includes children’s books, augmented reality, murals, fabrics, animations and has shown her art in galleries such as the Minneapolis Institute of Art, The Museum of Russian Art, Red Cloud Heritage Center and the Minnesota Museum of American Art to name a few. Her first permanent site-specific augmented reality public art installation known as the Dakota Spirit Walk is available on the Revelo AR app.</p><p>In 2021, she opened her own Dakota publishing company called Wíyouŋkihipi (We Are Capable) Productions to create a wider platform that educates and honors the culture, language and history of Dakota people.</p>",
+          bio: "<p>Marlena Myles is a self-taught Native American (Spirit Lake Dakota/Mohegan/Muscogee) artist located in St Paul, Minnesota. Her art brings modernity to Indigenous history, languages and oral traditions while using the land as a teacher. Growing up on her traditional Dakota homelands, she enjoys using her artwork to teach Minnesotans the Indigenous history of this place we call home.</p><p>Her professional work includes children’s books, augmented reality, murals, fabrics and animations shown in Minneapolis Institute of Art and The Museum of Russian Art and other galleries. Her first permanent site-specific augmented reality public art installation known as the Dakota Spirit Walk is available on the Revelo AR app.</p><p>In 2021, she opened her own Dakota publishing company called Wíyouŋkihipi (We Are Capable) Productions to create a wider platform that educates and honors the culture, language and history of Dakota people.</p>",
           socialMedia: [
             // {
             //   platform: "YouTube",
@@ -351,7 +351,7 @@ export const data = {
         {
           imgSrc: "/headshots/headshot-rachel-hislop.jpg",
           title: "Rachel Hislop",
-          bio: "<p>...</p>",
+          bio: "<p>Rachel Hislop is a writer, editor, strategist and public speaker. As vice president of content at OkayMedia and editor-in-chief of Okayplayer.com and OkayAfrica.com, Rachel spearheaded a dynamic editorial strategy to engage a youthful demographic and propelled both brands to new heights. Rachel led Beyoncé’s digital presence as digital content manager for Parkwood Entertainment and for the star’s self-titled album, “Lemonade,” “The Formation World Tour,” and the “On The Run Tour.” She also managed digital strategies for Chloe x Halle, Ivy Park, and more. She is currently consulting with purpose-driven businesses and brands on the art of storytelling in the digital realm.</p>",
           socialMedia: [
             // {
             //   platform: "YouTube",
@@ -368,7 +368,7 @@ export const data = {
         {
           imgSrc: "/headshots/headshot-nyamekye.jpg",
           title: "Nyamekye Wilson",
-          bio: "<p>Marlena Myles is a self-taught Native American (Spirit Lake Dakota/Mohegan/Muscogee) artist located in St Paul, Minnesota. Her art brings modernity to Indigenous history, languages and oral traditions while using the land as a teacher. Growing up on her traditional Dakota homelands, she enjoys using her artwork to teach Minnesotans the Indigenous history of this place we call home.</p><p>Her professional work includes children’s books, augmented reality, murals, fabrics and animations shown in Minneapolis Institute of Art and The Museum of Russian Art and other galleries. Her first permanent site-specific augmented reality public art installation known as the Dakota Spirit Walk is available on the Revelo AR app.</p><p>In 2021, she opened her own Dakota publishing company called Wíyouŋkihipi (We Are Capable) Productions to create a wider platform that educates and honors the culture, language and history of Dakota people.</p>",
+          bio: "<p>Nyamekye Wilson, also known as the “Moses of STEM,“ is a visionary driven by the transformational power of intersectionality and human-centered design. With a fervor for justice, Nyamekye's work echoes the spirit of impactful leaders in the civil rights and gender equity movement. Her passion for global STEM progress birthed a 6-figure ed tech company while working at Google. Nyamekye's most notable achievement is her extensive reach across 33 countries, impacting over 200 schools and empowering more than 9,000 Black women through her ed-tech nonprofit Black Sisters in STEM (Black SiS).</p><p>Her dedication to bridging the gender gap in STEM education and careers has garnered widespread recognition, including from Her Highness Sheikha Mozah Bint Marwan Al Maktoum of Dubai and the World Summit on the Information Society (WSIS).</p>",
           socialMedia: [
             // {
             //   platform: "YouTube",
