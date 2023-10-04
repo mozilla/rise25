@@ -21,6 +21,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
@@ -151,7 +152,7 @@ p {
 }
 
 .header {
-  @apply max-sm:bg-black max-sm:fixed max-sm:top-0;
+  @apply bg-black fixed top-0;
 }
 
 .header a {
@@ -163,14 +164,13 @@ p {
  */
 
 .winners-wrap {
-  @apply mt-14 sm:mt-0 sm:fixed sm:top-0;
+  @apply mt-14 mt-0;
 }
 .winners {
-  @apply sm:flex sm:gap-4;
 }
 
 .winner-group {
-  @apply sm:flex sm:gap-4;
+  @apply sm:grid md:gap-8 md:grid-cols-2 lg:grid-cols-3 md:mb-20;
 }
 
 .winner {
@@ -181,7 +181,7 @@ p {
 }
 
 .winner-info {
-  @apply pt-6 px-6 pb-20 min-h-[400px] sm:h-auto sm:pb-16 inset-0 bg-neutral-900 bg-opacity-80 backdrop-blur relative sm:absolute z-10 space-y-8 opacity-0 hover:opacity-100 transition ease-in-out duration-300;
+  @apply flex items-center pt-6 px-6 pb-20 min-h-[400px] md:h-auto md:pb-16 inset-0 bg-neutral-900 bg-opacity-80 backdrop-blur relative md:absolute z-10 space-y-8 opacity-0 hover:opacity-100 transition ease-in-out duration-300;
 }
 
 .winner-social {
@@ -201,11 +201,11 @@ p {
 }
 
 .card {
-  @apply w-full sm:aspect-[33/60] relative bg-secondary min-w-[340px] will-change-transform mb-10 sm:mb-0;
+  @apply w-full md:aspect-[33/60] relative bg-secondary min-w-[340px] will-change-transform mb-10 md:mb-0;
 }
 
 .group-card {
-  @apply flex px-8 pt-12 pb-16;
+  @apply mb-10 md:mb-0 flex px-8 py-8 md:col-span-2 lg:col-span-3 relative;
 }
 
 .group-card-inner {
@@ -229,7 +229,7 @@ p {
 }
 
 .footer {
-  @apply md:fixed md:bottom-0;
+  /* @apply sm:fixed sm:bottom-0; */
 }
 
 .footer a {
