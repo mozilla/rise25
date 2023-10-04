@@ -201,7 +201,7 @@ p {
 }
 
 .card {
-  @apply w-full md:aspect-[33/60] relative bg-secondary min-w-[340px] will-change-transform mb-10 md:mb-0;
+  @apply w-full md:aspect-[33/60] relative bg-neutral-800 min-w-[340px] will-change-transform mb-10 md:mb-0;
 }
 
 .group-card {
