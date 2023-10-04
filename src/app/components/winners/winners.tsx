@@ -136,7 +136,7 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
                                             <h3 className={`group-card-title`}>{item.group.name}</h3>
                                             <p className="text-lg">{item.group.description}</p>
                                         </div>
-                                        <Image className={`z-0`} src={item.group.imgSrc} layout="fill" objectFit="fill" alt={item.group.name} />
+                                        <Image priority className={`z-0`} src={item.group.imgSrc} layout="fill" objectFit="fill" alt={item.group.name} />
                                     </div>
                                 )}
                                 {item.winners.map((winner, winnerIndex) => {
@@ -147,7 +147,7 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
                                             <div className="winner-info">
                                                 <div className="winner-bio" dangerouslySetInnerHTML={{ __html: winner.bio }} />
                                             </div>
-                                            <Image src={winner.imgSrc} layout="fill" objectFit="cover" alt={winner.title} />
+                                            <Image src={winner.imgSrc} layout="fill" objectFit="cover" placeholder="blur" blurDataURL={winner.blurImgSrc} alt={winner.title} />
                                         </div>
                                     )
                                 })}
