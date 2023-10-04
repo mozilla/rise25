@@ -5,7 +5,7 @@ export const data = {
         name: "Activists",
         slug: "activists",
         description:
-          "Activists using the internet to drive social and political change by amplifying their voices and making a difference in the world.",
+          "Meet the digital activists using technology to amplify voices, effect change, and inspire audiences globally. These pioneers advocate for a better world, on- and offline.",
         imgSrc: "/gradients/card-gradient-1.png",
       },
       winners: [
@@ -101,7 +101,7 @@ export const data = {
         name: "Builders",
         slug: "builders",
         description:
-          "Activists using the internet to drive social and political change by amplifying their voices and making a difference in the world.",
+          "Meet the engineers and technical people building the infrastructure of the internet. These builders shape the technical side of the web, making it more secure, accessible to everyone and a tool for knowledge.",
         imgSrc: "/gradients/card-gradient-2.png",
       },
       winners: [
@@ -127,16 +127,16 @@ export const data = {
           title: "Andy Yen",
           bio: "<p>Andy Yen is the Founder and CEO of Proton, one of the fastest growing consumer tech companies in Europe. Proton offers the world’s first privacy-by-default ecosystem, providing encrypted email, calendar, file storage, VPN, identity management and much more, built on the principle of your data, your rules. Andy launched Proton’s first product, ProtonMail, now the world’s largest encrypted email service, in 2014 while still working as a CERN scientist. Since then, Andy has become a leading voice in the global privacy movement. Today, Proton has more than 100m accounts and a team of more than 400 people worldwide.</p>",
           socialMedia: [
-            {
-              platform: "YouTube",
-              url: "https://www.youtube.com/user/driesdepoorter",
-            },
-            { platform: "Twitter", url: "https://twitter.com/driesdepoorter" },
-            {
-              platform: "Instagram",
-              url: "https://www.instagram.com/driesdepoorter/",
-            },
-            { platform: "Web", url: "https://www.driesdepoorter.com/" },
+            // {
+            //   platform: "YouTube",
+            //   url: "#",
+            // },
+            // { platform: "Twitter", url: "#" },
+            // {
+            //   platform: "Instagram",
+            //   url: "#",
+            // },
+            // { platform: "Web", url: "#" },
           ],
         },
         {
@@ -197,7 +197,7 @@ export const data = {
         name: "Artists",
         slug: "artists",
         description:
-          "Activists using the internet to drive social and political change by amplifying their voices and making a difference in the world.",
+          "Meet the creative forces creating innovative and thought-provoking digital artwork. These artists use the internet as their canvas to inspire others and rethink what's possible online.",
         imgSrc: "/gradients/card-gradient-3.png",
       },
       winners: [
@@ -255,7 +255,7 @@ export const data = {
         {
           imgSrc: "/headshots/headshot-dries.jpg",
           title: "Dries Depoorter",
-          bio: "<p>Belgian artist Dries Depoorter, based in Ghent, combines technology and art to create pieces that highlight modern concerns like privacy, artificial intelligence, surveillance, and social media. Dries has become a notable figure in the digital art world. His portfolio includes innovative apps, interactive installations, websites and games.</p><p>A standout project of his, 'Die With Me', is a unique chat app that's only accessible when a user's phone battery is below 5%. Another project, 'The Flemish Scrollers', uses AI to automatically tag Belgian politicians when they use their phones during daily livestreams. His projects have gained international attention, solidifying Dries' position in the global art scene.</p><p>He has showcased his work at prestigious venues like the Barbican in London, Art Basel, Mutek Festival in Montreal, and Ars Electronica. Dries has also given talks for organizations such as TEDx, MoMA, and SXSW.</p>",
+          bio: "<p>Belgian artist Dries Depoorter, based in Ghent, combines technology and art to create pieces that highlight modern concerns like privacy, artificial intelligence, surveillance, and social media. With a strong background in electronics, Dries has become a notable figure in the digital art world. His diverse portfolio includes innovative apps, interactive installations, websites and games.</p><p>A standout project of his, 'Die With Me,' is a unique chat app that's only accessible when a user's phone battery is below 5%. Another project, 'The Flemish Scrollers,' uses AI to automatically tag Belgian politicians when they use their phones during daily livestreams. His projects have gained international attention, solidifying Dries' position in the global art scene.</p><p>He has showcased his work at prestigious venues like the Barbican in London, Art Basel, Mutek Festival in Montreal, and Ars Electronica.</p>",
           socialMedia: [
             // {
             //   platform: "YouTube",
@@ -293,7 +293,7 @@ export const data = {
         name: "Creators",
         slug: "creators",
         description:
-          "Activists using the internet to drive social and political change by amplifying their voices and making a difference in the world.",
+          "Meet the content creators using storytelling to build community online. These the filmmakers, educators, journalists and social media creators inspire their audiences and sparking important conversations.",
         imgSrc: "/gradients/card-gradient-4.png",
       },
       winners: [
@@ -368,7 +368,7 @@ export const data = {
         {
           imgSrc: "/headshots/headshot-nyamekye.jpg",
           title: "Nyamekye Wilson",
-          bio: "<p>Nyamekye Wilson, also known as the 'Moses of STEM', is a visionary driven by the transformational power of intersectionality and human-centered design. With a fervor for justice, Nyamekye's work echoes the spirit of impactful leaders in the civil rights and gender equity movement. Her passion for global STEM progress birthed a 6-figure ed tech company while working at Google. Nyamekye's most notable achievement is her extensive reach across 33 countries, impacting over 200 schools and empowering more than 9,000 Black women through her ed-tech nonprofit Black Sisters in STEM (Black SiS).</p><p>Her dedication to bridging the gender gap in STEM education and careers has garnered widespread recognition, including from Her Highness Sheikha Mozah Bint Marwan Al Maktoum of Dubai and the World Summit on the Information Society (WSIS). She brings both experience and a young, authentic perspective that leaves audiences inspired, refreshed and galvanized towards impact.</p>",
+          bio: "<p>Marlena Myles is a self-taught Native American (Spirit Lake Dakota/Mohegan/Muscogee) artist located in St Paul, Minnesota. Her art brings modernity to Indigenous history, languages and oral traditions while using the land as a teacher. Growing up on her traditional Dakota homelands, she enjoys using her artwork to teach Minnesotans the Indigenous history of this place we call home.</p><p>Her professional work includes children’s books, augmented reality, murals, fabrics and animations shown in Minneapolis Institute of Art and The Museum of Russian Art and other galleries. Her first permanent site-specific augmented reality public art installation known as the Dakota Spirit Walk is available on the Revelo AR app.</p><p>In 2021, she opened her own Dakota publishing company called Wíyouŋkihipi (We Are Capable) Productions to create a wider platform that educates and honors the culture, language and history of Dakota people.</p>",
           socialMedia: [
             // {
             //   platform: "YouTube",
@@ -389,7 +389,7 @@ export const data = {
         name: "Advocates",
         slug: "advocates",
         description:
-          "Activists using the internet to drive social and political change by amplifying their voices and making a difference in the world.",
+          "Meet the people shaping the policies and regulations governing the internet. These policymakers, scientists and advocates fight for an open, free internet.",
         imgSrc: "/gradients/card-gradient-5.png",
       },
       winners: [
