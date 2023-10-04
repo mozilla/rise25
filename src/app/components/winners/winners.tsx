@@ -66,7 +66,6 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
                                                 {winner.title}
                                                 <div className="winner-tap-info">
                                                     <Info className="group-active:hidden group-hover:hidden" />
-                                                    <Close className="hidden group-active:block group-hover:block" />
                                                 </div>
                                             </div>
                                             <div className="winner-info">
