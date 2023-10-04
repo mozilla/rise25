@@ -6,3 +6,5 @@ export * from "./instagram";
 export * from "./twitter";
 export * from "./youtube";
 export * from "./web";
+export * from "./close";
+export * from "./info";

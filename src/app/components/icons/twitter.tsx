@@ -9,6 +9,4 @@ export const Twitter = ({ className }: { className?: string }) => (
             </clipPath>
         </defs>
     </svg>
-
-
 )
