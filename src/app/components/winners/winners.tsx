@@ -24,9 +24,9 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
         })
     }
 
-    // if (!enabled) {
-    //     return <></>
-    // }
+    if (!enabled) {
+        return <></>
+    }
 
     return (
         <div id="winners" className={`winners-wrap text-white section section--xl w-full flex items-center min-h-screen`}>
