@@ -72,13 +72,13 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
                                             aria-expanded={focusedCardIndex === cardIndex && isCardExpanded ? 'true' : 'false'}
                                             onFocus={() => setFocusedCardIndex(cardIndex)}
                                         >
-                                            <div className="winner-footer">
+                                            <footer className="winner-footer">
                                                 <h3 className="winner-name">{winner.title}</h3>
                                                 <div className="winner-icon">
                                                     <Info className="group-active:hidden group-hover:hidden" />
                                                 </div>
-                                            </div>
-                                            <div className="winner-modal" tabIndex={0}
+                                            </footer>
+                                            <aside className="winner-modal" tabIndex={0}
                                                 onFocus={() => setIsCardExpanded(focusedCardIndex === cardIndex)}
                                                 onBlur={() => {
                                                     setIsCardExpanded(false)
@@ -86,7 +86,7 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
                                                 }}
                                             >
                                                 <div className="winner-bio" dangerouslySetInnerHTML={{ __html: winner.bio }} />
-                                            </div>
+                                            </aside>
                                             <Image src={winner.imgSrc} layout="fill" style={{ objectFit: "cover" }} placeholder="blur" blurDataURL={winner.blurImgSrc} alt={winner.title} />
                                         </div>
                                     )
