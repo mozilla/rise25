@@ -308,7 +308,7 @@ export const data = {
         name: "Creators",
         slug: "creators",
         description:
-          "Meet the content creators using storytelling to build community online. These the filmmakers, educators, journalists and social media creators inspire their audiences and sparking important conversations.",
+          "Meet the content creators using storytelling to build community online. These filmmakers, educators, journalists and social media creators inspire their audiences and sparking important conversations.",
         imgSrc: "/gradients/card-gradient-4.png",
       },
       winners: [
