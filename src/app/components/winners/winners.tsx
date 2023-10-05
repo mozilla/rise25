@@ -7,15 +7,14 @@ import { data } from '@/app/lib/data';
 import { gtag } from "@/app/lib";
 
 export const Winners = ({ enabled }: { enabled: boolean }) => {
-    let cardsIndex = 0;
     const { winnerGroups } = data;
-    const cardGroups = useRef<HTMLDivElement[]>([]);
+    const cardGroups = useRef<HTMLElement[]>([]);
     const [focusedCardIndex, setFocusedCardIndex] = useState<number | null>(0)
     const [isCardExpanded, setIsCardExpanded] = useState(false)
 
-    const createCardsGroupRefs = (card: HTMLDivElement | null, index: number) => {
+    const createCardsGroupRefs = (card: HTMLElement | null, index: number) => {
         if (card) {
-            (cardGroups.current as HTMLDivElement[])[index] = card;
+            (cardGroups.current as HTMLElement[])[index] = card;
         }
     };
 
@@ -25,8 +24,6 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
             category: "Cards nav item click"
         })
     }
-
-    console.log("FOCUSED CARD INDEX: ", focusedCardIndex);
 
     if (!enabled) {
         return <></>
@@ -54,13 +51,13 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
                         return (
                             <div key={groupIndex} className="winner-group">
                                 {item.group && (
-                                    <div id={item.group.slug} className="group-card" ref={(e) => createCardsGroupRefs(e, groupIndex)}>
+                                    <section id={item.group.slug} className="group-card" aria-label={item.group.name} ref={(e) => createCardsGroupRefs(e, groupIndex)}>
                                         <div className={`group-card-inner`}>
                                             <h2 className={`group-card-title`}>{item.group.name}</h2>
                                             <p className="text-lg">{item.group.description}</p>
                                         </div>
                                         <Image priority className={`z-0`} src={item.group.imgSrc} layout="fill" style={{ objectFit: "fill" }} alt={item.group.name} />
-                                    </div>
+                                    </section>
                                 )}
                                 {item.winners.map((winner, winnerIndex) => {
                                     const cardIndex = groupIndex * item.winners.length + winnerIndex + 1;
