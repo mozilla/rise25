@@ -28,7 +28,7 @@ export const Footer = () => {
                                 alt="Mozilla Foundation"
                             />
                         </Link>
-                        <p className="type-body-xs">Portions of this content are ©1998–2022 by individual mozilla.org contributors. Content available under a <Link href="https://www.mozilla.org/en-US/foundation/licensing/website-content/" target="_blank">Creative Commons license.</Link></p>
+                        <p className="type-body-xs">Portions of this content are ©1998–{new Date().getFullYear()} by individual mozilla.org contributors. Content available under a <Link href="https://www.mozilla.org/en-US/foundation/licensing/website-content/" target="_blank">Creative Commons license.</Link></p>
                     </div>
                     <nav className="flex gap-6" role="navigation">
                         {navigation.map((item) => (
