@@ -52,7 +52,7 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
                                 {item.group && (
                                     <div id={item.group.slug} data-id={cardsIndex} className="group-card" ref={(e) => createCardsGroupRefs(e, groupIndex)}>
                                         <div className={`group-card-inner`}>
-                                            <h3 className={`group-card-title`}>{item.group.name}</h3>
+                                            <h2 className={`group-card-title`}>{item.group.name}</h2>
                                             <p className="text-lg">{item.group.description}</p>
                                         </div>
                                         <Image priority className={`z-0`} src={item.group.imgSrc} layout="fill" style={{ objectFit: "fill" }} alt={item.group.name} />
@@ -62,13 +62,13 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
                                     cardsIndex++
                                     return (
                                         <div key={winnerIndex} data-id={cardsIndex} className="winner card group">
-                                            <div className="winner-name">
-                                                {winner.title}
-                                                <div className="winner-tap-info">
+                                            <div className="winner-footer">
+                                                <h3 className="winner-name">{winner.title}</h3>
+                                                <div className="winner-icon">
                                                     <Info className="group-active:hidden group-hover:hidden" />
                                                 </div>
                                             </div>
-                                            <div className="winner-info">
+                                            <div className="winner-modal">
                                                 <div className="winner-bio" dangerouslySetInnerHTML={{ __html: winner.bio }} />
                                             </div>
                                             <Image src={winner.imgSrc} layout="fill" style={{ objectFit: "cover" }} placeholder="blur" blurDataURL={winner.blurImgSrc} alt={winner.title} />
