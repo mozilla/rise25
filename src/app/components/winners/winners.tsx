@@ -31,18 +31,19 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
     return (
         <div id="winners" className={`winners-wrap text-white section section--xl w-full flex items-center min-h-screen`}>
             <div className="container container--2xl">
-                <div className="group-navigation">
-                    {winnerGroups.map((item, groupIndex) => (
-                        <React.Fragment key={groupIndex}>
-                            <div className="group-navigation-item" key={groupIndex}>
-                                <a className="group-card-link" href={`#${item.group.slug}`} onClick={(e) => handleLinkClick(e, groupIndex, item.group.name)}>
-                                    {item.group.name}
-                                </a>
-                            </div>
-                            {groupIndex < winnerGroups.length - 1 && <span> / </span>}
-                        </React.Fragment>
-                    ))}
-                </div>
+                <nav className="group-navigation">
+                    <ul className="group-navigation-list">
+                        {winnerGroups.map((item, groupIndex) => (
+                            <React.Fragment key={groupIndex}>
+                                <li className="group-navigation-item" key={groupIndex}>
+                                    <a className="group-card-link" href={`#${item.group.slug}`} onClick={(e) => handleLinkClick(e, groupIndex, item.group.name)}>
+                                        {item.group.name}
+                                    </a>
+                                </li>
+                            </React.Fragment>
+                        ))}
+                    </ul>
+                </nav>
 
                 <div className="winners">
                     {winnerGroups.map((item, groupIndex) => {
@@ -52,7 +53,7 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
                                 {item.group && (
                                     <div id={item.group.slug} data-id={cardsIndex} className="group-card" ref={(e) => createCardsGroupRefs(e, groupIndex)}>
                                         <div className={`group-card-inner`}>
-                                            <h3 className={`group-card-title`}>{item.group.name}</h3>
+                                            <h2 className={`group-card-title`}>{item.group.name}</h2>
                                             <p className="text-lg">{item.group.description}</p>
                                         </div>
                                         <Image priority className={`z-0`} src={item.group.imgSrc} layout="fill" style={{ objectFit: "fill" }} alt={item.group.name} />
@@ -62,13 +63,13 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
                                     cardsIndex++
                                     return (
                                         <div key={winnerIndex} data-id={cardsIndex} className="winner card group">
-                                            <div className="winner-name">
-                                                {winner.title}
-                                                <div className="winner-tap-info">
+                                            <div className="winner-footer">
+                                                <h3 className="winner-name">{winner.title}</h3>
+                                                <div className="winner-icon">
                                                     <Info className="group-active:hidden group-hover:hidden" />
                                                 </div>
                                             </div>
-                                            <div className="winner-info">
+                                            <div className="winner-modal">
                                                 <div className="winner-bio" dangerouslySetInnerHTML={{ __html: winner.bio }} />
                                             </div>
                                             <Image src={winner.imgSrc} layout="fill" style={{ objectFit: "cover" }} placeholder="blur" blurDataURL={winner.blurImgSrc} alt={winner.title} />
