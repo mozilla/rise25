@@ -31,18 +31,19 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
     return (
         <div id="winners" className={`winners-wrap text-white section section--xl w-full flex items-center min-h-screen`}>
             <div className="container container--2xl">
-                <div className="group-navigation">
-                    {winnerGroups.map((item, groupIndex) => (
-                        <React.Fragment key={groupIndex}>
-                            <div className="group-navigation-item" key={groupIndex}>
-                                <a className="group-card-link" href={`#${item.group.slug}`} onClick={(e) => handleLinkClick(e, groupIndex, item.group.name)}>
-                                    {item.group.name}
-                                </a>
-                            </div>
-                            {groupIndex < winnerGroups.length - 1 && <span> / </span>}
-                        </React.Fragment>
-                    ))}
-                </div>
+                <nav className="group-navigation">
+                    <ul className="group-navigation-list">
+                        {winnerGroups.map((item, groupIndex) => (
+                            <React.Fragment key={groupIndex}>
+                                <li className="group-navigation-item" key={groupIndex}>
+                                    <a className="group-card-link" href={`#${item.group.slug}`} onClick={(e) => handleLinkClick(e, groupIndex, item.group.name)}>
+                                        {item.group.name}
+                                    </a>
+                                </li>
+                            </React.Fragment>
+                        ))}
+                    </ul>
+                </nav>
 
                 <div className="winners">
                     {winnerGroups.map((item, groupIndex) => {

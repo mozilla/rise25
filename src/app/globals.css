@@ -176,16 +176,20 @@ p {
 .winner {
 }
 
-.winner-name {
-  @apply z-20 absolute bottom-0 left-0 w-full bg-neutral-900 text-white p-4 type-heading-4 flex justify-between;
+.winner-footer {
+  @apply z-20 absolute bottom-0 left-0 w-full bg-neutral-900 p-4 flex justify-between;
 }
 
-.winner-info {
+.winner-name {
+  @apply text-white type-heading-4;
+}
+
+.winner-modal {
   @apply flex items-center pt-6 px-6 pb-20 min-h-[400px] md:h-auto md:pb-16 inset-0 bg-neutral-900 bg-opacity-80 backdrop-blur relative md:absolute z-10 space-y-8 opacity-0 group-hover:opacity-100 transition ease-in-out duration-300;
 }
 
 @media (hover: hover) {
-  .winner-tap-info {
+  .winner-icon {
     @apply hidden;
   }
 }
@@ -227,11 +231,14 @@ p {
 }
 
 .group-navigation {
-  @apply flex justify-between mb-8;
+}
+
+.group-navigation-list {
+  @apply flex justify-between mb-8 overflow-x-scroll;
 }
 
 .group-navigation-item {
-  @apply text-sm;
+  @apply text-sm flex flex-1 justify-between relative after:inline-flex last:after:hidden last:flex-[inherit] after:mx-4 after:left-[50%] after:content-['/'] after:w-1/2;
 }
 
 .footer {
