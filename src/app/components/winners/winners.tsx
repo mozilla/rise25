@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 import { Info } from "../icons"
 import { data } from '@/app/lib/data';
@@ -10,6 +10,8 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
     let cardsIndex = 0;
     const { winnerGroups } = data;
     const cardGroups = useRef<HTMLDivElement[]>([]);
+    const [focusedCardIndex, setFocusedCardIndex] = useState<number | null>(0)
+    const [isCardExpanded, setIsCardExpanded] = useState(false)
 
     const createCardsGroupRefs = (card: HTMLDivElement | null, index: number) => {
         if (card) {
@@ -23,6 +25,8 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
             category: "Cards nav item click"
         })
     }
+
+    console.log("FOCUSED CARD INDEX: ", focusedCardIndex);
 
     if (!enabled) {
         return <></>
@@ -47,11 +51,10 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
 
                 <div className="winners">
                     {winnerGroups.map((item, groupIndex) => {
-                        cardsIndex++;
                         return (
                             <div key={groupIndex} className="winner-group">
                                 {item.group && (
-                                    <div id={item.group.slug} data-id={cardsIndex} className="group-card" ref={(e) => createCardsGroupRefs(e, groupIndex)}>
+                                    <div id={item.group.slug} className="group-card" ref={(e) => createCardsGroupRefs(e, groupIndex)}>
                                         <div className={`group-card-inner`}>
                                             <h2 className={`group-card-title`}>{item.group.name}</h2>
                                             <p className="text-lg">{item.group.description}</p>
@@ -60,16 +63,31 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
                                     </div>
                                 )}
                                 {item.winners.map((winner, winnerIndex) => {
-                                    cardsIndex++
+                                    const cardIndex = groupIndex * item.winners.length + winnerIndex + 1;
+
                                     return (
-                                        <div key={winnerIndex} data-id={cardsIndex} tabIndex={0} className="winner card group">
+                                        <div
+                                            key={winnerIndex}
+                                            tabIndex={0}
+                                            className={`winner card group`}
+                                            aria-label={`Winner: ${winner.title}`}
+                                            aria-selected={focusedCardIndex === cardIndex ? 'true' : 'false'}
+                                            aria-expanded={focusedCardIndex === cardIndex && isCardExpanded ? 'true' : 'false'}
+                                            onFocus={() => setFocusedCardIndex(cardIndex)}
+                                        >
                                             <div className="winner-footer">
                                                 <h3 className="winner-name">{winner.title}</h3>
                                                 <div className="winner-icon">
                                                     <Info className="group-active:hidden group-hover:hidden" />
                                                 </div>
                                             </div>
-                                            <div className="winner-modal" tabIndex={0}>
+                                            <div className="winner-modal" tabIndex={0}
+                                                onFocus={() => setIsCardExpanded(focusedCardIndex === cardIndex)}
+                                                onBlur={() => {
+                                                    setIsCardExpanded(false)
+                                                    setFocusedCardIndex(null)
+                                                }}
+                                            >
                                                 <div className="winner-bio" dangerouslySetInnerHTML={{ __html: winner.bio }} />
                                             </div>
                                             <Image src={winner.imgSrc} layout="fill" style={{ objectFit: "cover" }} placeholder="blur" blurDataURL={winner.blurImgSrc} alt={winner.title} />
