@@ -62,14 +62,14 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
                                 {item.winners.map((winner, winnerIndex) => {
                                     cardsIndex++
                                     return (
-                                        <div key={winnerIndex} data-id={cardsIndex} className="winner card group">
+                                        <div key={winnerIndex} data-id={cardsIndex} tabIndex={0} className="winner card group">
                                             <div className="winner-footer">
                                                 <h3 className="winner-name">{winner.title}</h3>
                                                 <div className="winner-icon">
                                                     <Info className="group-active:hidden group-hover:hidden" />
                                                 </div>
                                             </div>
-                                            <div className="winner-modal">
+                                            <div className="winner-modal" tabIndex={0}>
                                                 <div className="winner-bio" dangerouslySetInnerHTML={{ __html: winner.bio }} />
                                             </div>
                                             <Image src={winner.imgSrc} layout="fill" style={{ objectFit: "cover" }} placeholder="blur" blurDataURL={winner.blurImgSrc} alt={winner.title} />
