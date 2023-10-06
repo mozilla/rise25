@@ -38,7 +38,6 @@ export default function RootLayout({
           <div className="bg-background -z-1">
             <OrangeBlurb className="orange-blurb" />
             <PurpleBlurb className="purple-blurb" />
-            <GreenBlurb className="green-blurb" />
           </div>
         </body>
       </html>

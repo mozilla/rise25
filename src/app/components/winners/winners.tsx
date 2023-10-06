@@ -54,7 +54,7 @@ export const Winners = ({ enabled }: { enabled: boolean }) => {
                                     <section id={item.group.slug} className="group-card" aria-label={item.group.name} ref={(e) => createCardsGroupRefs(e, groupIndex)}>
                                         <div className={`group-card-inner`}>
                                             <h2 className={`group-card-title`}>{item.group.name}</h2>
-                                            <p className="text-lg">{item.group.description}</p>
+                                            <p className="group-card-inner-text text-lg">{item.group.description}</p>
                                         </div>
                                         <Image priority className={`z-0`} src={item.group.imgSrc} layout="fill" style={{ objectFit: "fill" }} alt={item.group.name} />
                                     </section>
