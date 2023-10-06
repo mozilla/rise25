@@ -18,7 +18,7 @@ export const Footer = () => {
             <div className="container container--2xl">
                 <div className="flex flex-col gap-4 lg:gap-6 lg:flex-row lg:justify-between lg:items-end">
                     <div className="space-y-8 max-w-[80ch]">
-                        <Link href="https://foundation.mozilla.org/" target="_blank" rel="nofollow noreferrer">
+                        <Link href="https://www.mozilla.org/" target="_blank" rel="nofollow noreferrer">
                             Mozilla
                         </Link>
                         <p className="type-body-xs">Portions of this content are ©1998–{new Date().getFullYear()} by individual mozilla.org contributors. Content available under a <Link href="https://www.mozilla.org/en-US/foundation/licensing/website-content/" target="_blank">Creative Commons license.</Link></p>
