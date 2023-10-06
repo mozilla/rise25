@@ -231,14 +231,15 @@ p {
 }
 
 .group-navigation {
+  @apply max-md:flex max-md:justify-center;
 }
 
 .group-navigation-list {
-  @apply flex justify-between mb-8 overflow-x-scroll;
+  @apply flex mb-8 overflow-x-scroll;
 }
 
 .group-navigation-item {
-  @apply text-sm flex flex-1 justify-between relative after:inline-flex last:after:hidden last:flex-[inherit] after:mx-4 after:left-[50%] after:content-['/'] after:w-1/2;
+  @apply text-sm md:font-medium flex relative after:inline-flex last:after:hidden last:flex-[inherit] after:mx-1 md:after:mx-8 after:content-['/'];
 }
 
 .footer {
