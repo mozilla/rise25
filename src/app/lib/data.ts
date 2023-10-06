@@ -434,8 +434,8 @@ export const data = {
         {
           imgSrc: "/headshots/headshot-fanny.jpg",
           blurImgSrc: "/headshots-blurred/headshot-fanny.jpg",
-          title: "Fanny Hidvegi",
-          bio: "<p>Fanny Hidvegi (@infofannny) is Access Now’s Europe Policy and Advocacy Director based in Brussels. She develops Access Now's European policy strategy and manages the EU office. Fanny was a member of the European Commission's High Level Expert Group on Artificial Intelligence, she served on the Council of Europe's Committee of Experts on Freedom of Expression and Digital Technologies, and on the board of the Hungarian Civil Liberties Union (HCLU).</p><p>She is a member of the European Parliament STOA Committee’s International Advisory Board. Fanny is an Obama Foundation Europe Leader and a Marshall Memorial Fellow. Fanny was selected to be a member of the POLITICO Tech 28 Class of 2022.</p>",
+          title: "Fanny Hidvégi",
+          bio: "<p>Fanny Hidvégi (@infofannny) is Access Now’s Europe Policy and Advocacy Director based in Brussels. She develops Access Now's European policy strategy and manages the EU office. Fanny was a member of the European Commission's High Level Expert Group on Artificial Intelligence, she served on the Council of Europe's Committee of Experts on Freedom of Expression and Digital Technologies, and on the board of the Hungarian Civil Liberties Union (HCLU).</p><p>She is a member of the European Parliament STOA Committee’s International Advisory Board. Fanny is an Obama Foundation Europe Leader and a Marshall Memorial Fellow. Fanny was selected to be a member of the POLITICO Tech 28 Class of 2022.</p>",
           socialMedia: [
             // {
             //   platform: "YouTube",
