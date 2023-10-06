@@ -128,7 +128,7 @@ p {
 }
 
 .btn-light {
-  @apply border bg-white text-black hover:bg-primary;
+  @apply border bg-white text-black hover:bg-gray transition ease-in-out duration-200;
 }
 
 .bg-background {
@@ -177,7 +177,7 @@ p {
 }
 
 .winner-footer {
-  @apply z-20 absolute bottom-0 left-0 w-full bg-neutral-900 p-4 flex justify-between;
+  @apply z-20 absolute bottom-0 left-0 w-full bg-black/[.8] p-4 flex justify-between;
 }
 
 .winner-name {
@@ -207,7 +207,7 @@ p {
 }
 
 .winner-bio p {
-  @apply type-body-sm;
+  @apply type-body-sm xl:text-base;
 }
 
 .card {
@@ -219,11 +219,15 @@ p {
 }
 
 .group-card-inner {
-  @apply z-1 relative mt-auto mb-0 flex flex-col gap-12 lg:gap-16 items-start;
+  @apply z-1 relative mt-auto mb-0 flex flex-col md:flex-row md:justify-between gap-4 md:gap-12 lg:gap-16 items-start md:items-center;
+}
+
+.group-card-inner-text {
+  @apply md:w-1/2;
 }
 
 .group-card-title {
-  @apply type-heading-3 p-4 bg-white bg-opacity-30 backdrop-blur-md drop-shadow-sm text-black flex gap-4 items-center;
+  @apply type-heading-2 md:p-4;
 
   svg {
     @apply hidden sm:block;

@@ -6,7 +6,7 @@ export const data = {
         slug: "activists",
         description:
           "Meet the digital activists using technology to amplify voices, effect change, and inspire audiences globally. These pioneers advocate for a better world, on and offline.",
-        imgSrc: "/gradients/card-gradient-1.png",
+        imgSrc: "/gradients/activists.png",
       },
       winners: [
         {
@@ -107,7 +107,7 @@ export const data = {
         slug: "builders",
         description:
           "Meet the engineers and technical people building the infrastructure of the internet. These builders shape the technical side of the web, making it more secure, accessible to everyone and a tool for knowledge.",
-        imgSrc: "/gradients/card-gradient-2.png",
+        imgSrc: "/gradients/builders.png",
       },
       winners: [
         {
@@ -208,7 +208,7 @@ export const data = {
         slug: "artists",
         description:
           "Meet the creative forces creating innovative and thought-provoking digital artwork. These artists use the internet as their canvas to inspire others and rethink what's possible online.",
-        imgSrc: "/gradients/card-gradient-3.png",
+        imgSrc: "/gradients/artists.png",
       },
       winners: [
         {
@@ -309,7 +309,7 @@ export const data = {
         slug: "creators",
         description:
           "Meet the content creators using storytelling to build community online. These filmmakers, educators, journalists and social media creators inspire their audiences and sparking important conversations.",
-        imgSrc: "/gradients/card-gradient-4.png",
+        imgSrc: "/gradients/creators.png",
       },
       winners: [
         {
@@ -410,7 +410,7 @@ export const data = {
         slug: "advocates",
         description:
           "Meet the people shaping the policies and regulations governing the internet. These policymakers, scientists and advocates fight for an open, free internet.",
-        imgSrc: "/gradients/card-gradient-5.png",
+        imgSrc: "/gradients/advocates.png",
       },
       winners: [
         {

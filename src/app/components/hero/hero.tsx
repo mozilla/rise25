@@ -16,7 +16,7 @@ export const Hero = ({ enabled, title }: { enabled: boolean, title: string }) =>
         <div id="hero-banner" className={`text-white section section--xl`}>
             <div className="container container--2xl">
                 <div className="space-y-4 lg:space-y-6">
-                    <h1 className="type-heading-1">Mozilla Presents:<br />25 visionaries reshaping our digital future.</h1>
+                    <h1 className="type-heading-1">Mozilla Presents:<br />25 visionaries reshaping <br className=""/>our digital future.</h1>
                     <Link className="btn btn-light" href="#" onClick={(e) => {
                         e.preventDefault();
                         setScene(2);
