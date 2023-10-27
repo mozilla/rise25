@@ -30,4 +30,4 @@ npm run dev
 
 ## Deployment
 
-This site uses Netlify for deployment.
+This site uses Netlify for deployment. Any changes to the `main` branch will be automatically deployed to a preview site, and changes to the `prod` branch will be automatically deployed to the production site.
