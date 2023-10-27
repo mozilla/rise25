@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mozilla | Rise 25</title>
+
+    <meta name="description" content="Mozilla presents 25 visionaries reshaping our digital future." />
+    <meta property="og:title" content="Mozilla | Rise 25" />
+    <meta property="og:description" content="Mozilla presents 25 visionaries reshaping our digital future." />
+    <meta property="og:image" content="/og-image.jpg" />
+
+    <script type="text/javascript" src="https://www.bugherd.com/sidebarv2.js?apikey=cltuoorymbo4x7w8iwxbnq" async="true"></script>
+  </head>
+
+  <body class="flex flex-col min-h-screen">
+    <div class="fixed inset-0 w-full h-full z-0">
+      <div class="gradient-bottom-left" aria-hidden></div>
+      <div class="gradient-top-right" aria-hidden></div>
+      <div class="gradient-top-left" aria-hidden></div>
+    </div>
+
+    <header
+      x-data="header()"
+      x-ref="header"
+      class="md:sticky relative top-0 pt-9 container flex items-center gap-6 justify-between z-10 transition-opacity duration-300"
+    >
+      <a href="https://www.mozilla.org/en-US/" class="max-w-[4.625rem] md:max-w-[6.25rem]">
+        <img src="/logo-mozilla-reverse.svg" width="162" height="34.656" alt="Mozilla Logo" class="w-full" />
+      </a>
+      <img
+        src="/logo-rise25.svg"
+        alt="Rise25 Logo"
+        width="196"
+        height="40"
+        class="absolute pt-9 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[7.5rem] md:max-w-auto"
+      />
+      <button @click="jumpToWinners" type="button" class="text-xs md:text-lg hover:underline font-semibold md:font-normal">See the winners</button>
+    </header>
+
+    <main x-data="{activeGroup: ''}" class="flex-grow z-10 animate-hero opacity-0 overflow-x-hidden">
+      <section id="hero" x-data="hero()" x-ref="hero" class="container mt-40 mb-24 md:mb-56 md:translate-x-0">
+        <h1 class="font-body text-5xl md:text-7xl lg:text-[6.25rem]/[6.875rem] tracking-[-0.04em] font-extrabold max-w-7xl">
+          Mozilla Presents:
+          <br />
+          25 visionaries reshaping our digital future.
+        </h1>
+      </section>
+
+      <section x-data="slider()" x-ref="sliderParallax" class="relative md:translate-y-[-20%]">
+        <div
+          x-ref="sliderContainer"
+          class="animate-fade-in opacity-0 md:translate-x-[40%] md:h-[calc(100vh+6rem)] flex flex-col justify-center"
+          style="animation-delay: 1000ms"
+        >
+          <div class="mb-5">
+            <h2
+              class="text-[1.5rem]/[1.625rem] tracking-[-0.04em] font-extrabold md:ml-4 transition-opacity duration-300 ease-in-out delay-100 md:px-6 px-5"
+              :class="atBottom ? 'md:opacity-0' : 'opacity-100'"
+            >
+              The Winners
+            </h2>
+          </div>
+
+          <nav class="transition-opacity duration-300 ease-in-out delay-100" aria-label="Scroll to the different groups of winners">
+            <ul class="flex md:items-center flex-row md:gap-6 gap-3 px-5 md:px-6 md:ml-3">
+              <template x-for="(group, index) in $store.winners.groups">
+                <li :key="index" class="flex md:items-center md:gap-6 gap-4 text-white">
+                  <button
+                    type="button"
+                    @click="jumpTo(group.scrollHash)"
+                    x-text="group.title"
+                    class="text-sm md:hover:underline md:w-[4.625rem] md:text-center"
+                    :class="group.scrollHash === activeGroup && 'font-bold underline'"
+                    :aria-label="`Scroll to the ${group.title} group of winners`"
+                  ></button>
+                  <span x-show="index + 1 != $store.winners.groups.length" class="sm:inline-block hidden">/</span>
+                </li>
+              </template>
+            </ul>
+          </nav>
+
+          <div
+            x-ref="slider"
+            x-show="$store.winners"
+            x-cloak
+            id="winners"
+            class="overflow-x-auto overflow-y-hidden pt-5 scroll-pt-7 pb-3 styled-scroll"
+            :class="atBottom ? 'pointer-events-auto' : 'md:pointer-events-none'"
+          >
+            <ul class="flex items-center gap-2">
+              <li class="w-3 md:w-10 flex-shrink-0">&nbsp;</li>
+              <template x-for="(group, index) in $store.winners.groups">
+                <li :key="index" class="flex-shrink-0">
+                  <ul class="flex gap-2 flex-shrink-0 items-start">
+                    <li
+                      :id="group.scrollHash"
+                      x-data="{ visible: false }"
+                      x-intersect.half="activeGroup = group.scrollHash"
+                      x-intersect.half:enter="visible = true"
+                      x-intersect.half:leave="visible = false"
+                      class="relative w-[20.625rem] md:max-h-[55vh] aspect-[11/20] flex-shrink-0 flex justify-end px-6 py-14 flex-col scroll-m-6 transition duration-300 ease"
+                      :class="visible ? 'opacity-100 md:translate-y-0' : 'opacity-20 md:translate-y-8'"
+                    >
+                      <div class="absolute inset-0 w-full h-full bg-[#F37925] overflow-hidden">
+                        <img
+                          src="/group-bg-gradient.svg"
+                          loading="lazy"
+                          alt="Soft gradient of oranges, blues, greens, and purples"
+                          class="absolute h-full object-cover inset-0"
+                          :class="`animate-gradient--${group.scrollHash}`"
+                        />
+                        <img
+                          src="/noise-texture.png"
+                          loading="lazy"
+                          alt="Noisy texture"
+                          class="absolute h-full w-full object-cover inset-0 bg-blend-overlay opacity-30"
+                        />
+                      </div>
+
+                      <div class="relative transition-opacity duration-300 ease-in-out delay-100" :class="visible ? 'opacity-100' : 'opacity-0'">
+                        <h2
+                          x-text="`${group.title} →`"
+                          class="text-[2.5rem]/[3rem] tracking-[-0.04em] font-bold text-black bg-group-title p-[0.625rem] mb-9 inline-block transition duration-300 ease-in-out delay-300"
+                          :class="visible ? 'opacity-100 md:translate-y-0' : 'opacity-0 md:translate-y-4'"
+                        ></h2>
+                        <p
+                          x-text="group.description"
+                          class="text-[1.125rem]/[1.375rem] transition duration-300 ease-in-out delay-500"
+                          :class="visible ? 'opacity-100' : 'opacity-0'"
+                        ></p>
+                      </div>
+                    </li>
+                    <template x-for="(winner, index) in group.winners">
+                      <li
+                        :key="`winner-${index}`"
+                        x-data="slide()"
+                        x-intersect.half:enter="visible = true"
+                        x-intersect.half:leave="visible = false"
+                        @mouseenter="openBio(true)"
+                        @mouseleave="openBio(false)"
+                        class="flex-shrink-0"
+                        :class="visible ? 'opacity-100 md:translate-y-0' : 'opacity-40 md:translate-y-8'"
+                      >
+                        <button
+                          x-ref="winnerButton"
+                          @click="open = !open"
+                          type="button"
+                          class="relative md:max-h-[55vh] group overflow-hidden cursor-pointer w-[20.625rem] aspect-[11/20] winner-slide"
+                        >
+                          <img
+                            class="w-full h-full object-cover transition-all duration-700 ease-in-out"
+                            width="330"
+                            height="600"
+                            loading="lazy"
+                            :src="winner.image"
+                            :alt="`Photo of ${winner.name}`"
+                          />
+                          <div
+                            class="absolute bottom-0 left-0 z-10 px-6 py-4 w-full flex items-center justify-between md:justify-center peer transition-colors duration-300 group ease-in-out"
+                            :class="open ? 'bg-transparent' : 'bg-black/70 hover:bg-black'"
+                            :title="`View ${winner.name}'s bio`"
+                          >
+                            <span class="text-lg font-bold transition-colors duration-300 text-white" x-text="winner.name"></span>
+
+                            <span class="relative w-6 h-6 md:hidden">
+                              <svg
+                                class="absolute inset-0 transition duration-300"
+                                :class="open ? 'opacity-0' : 'opacity-100 text-black'"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="none"
+                              >
+                                <path
+                                  fill="currentColor"
+                                  d="M12 11a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0v-4a1 1 0 0 0-1-1Zm.38-3.92a1 1 0 0 0-.76 0 1 1 0 0 0-.33.21 1.15 1.15 0 0 0-.21.33 1 1 0 0 0 .21 1.09c.097.088.209.16.33.21A1 1 0 0 0 13 8a1.05 1.05 0 0 0-.29-.71 1 1 0 0 0-.33-.21ZM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16.001A8 8 0 0 1 12 20Z"
+                                />
+                              </svg>
+                              <svg
+                                class="absolute inset-0 transition duration-300"
+                                :class="open ? 'opacity-100' : 'opacity-0 text-white'"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="none"
+                              >
+                                <path
+                                  stroke="currentColor"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="M18 6 6 18M6 6l12 12"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+
+                          <div
+                            class="absolute inset-0 text-sm font-medium p-5 w-full h-full bg-black/70 transition-opacity duration-300 ease-in-out"
+                            :class="open ? 'opacity-100 backdrop-blur-sm' : 'opacity-0'"
+                          >
+                            <div
+                              x-html="winner.bio"
+                              class="grid gap-2 transition duration-500 text-left max-h-full winner-slide__copy"
+                              :class="open ? 'opacity-100 delay-200 md:translate-y-0' : 'opacity-0 md:translate-y-4'"
+                            ></div>
+                          </div>
+                        </button>
+                      </li>
+                    </template>
+                  </ul>
+                </li>
+              </template>
+              <li class="w-3 md:w-10 flex-shrink-0">&nbsp;</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      x-data="footer()"
+      x-ref="footer"
+      class="relative md:fixed md:left-1/2 md:-translate-x-1/2 md:bottom-0 grid gap-6 container z-10 pb-9 transition-opacity duration-300 md:mt-0 mt-9"
+      :class="atBottom ? 'opacity-100' : 'md:opacity-0'"
+    >
+      <div>
+        <a href="https://www.mozilla.org/en-US/" class="inline-flex hover:underline"> Mozilla </a>
+      </div>
+
+      <div class="flex xl:items-center justify-between xl:gap-6 gap-4 xl:flex-row flex-col">
+        <p class="text-sm">
+          Portions of this content are ©1998-2022 by individual mozilla.org contributors. Content available under a Creative Commons license.
+        </p>
+
+        <nav>
+          <ul class="flex items-center gap-6 text-sm">
+            <li><a href="https://www.mozilla.org/en-US/privacy/websites/" class="underline">Website Privacy Notice</a></li>
+            <li><a href="https://www.mozilla.org/en-US/privacy/websites/#cookies" class="underline">Cookies</a></li>
+            <li><a href="https://www.mozilla.org/en-US/about/legal/terms/mozilla/" class="underline">Legal</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,161 @@
+@import './fonts.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply font-body bg-[#030303] text-white antialiased;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -ms-text-size-adjust: 100%;
+
+    @media (min-width: 160em) {
+      /* 2560px - widescreen */
+      font-size: calc(1em * 1.2);
+    }
+
+    @media (min-width: 215em) {
+      /* 3440 - ultra widescreen */
+      font-size: calc(1em * 1.55);
+    }
+
+    @media (min-width: 215em) and (min-height: 106.25em) {
+      /* 3440x1700 - 4k 32" */
+      font-size: calc(1em * 2);
+    }
+  }
+
+  [x-cloak] {
+    display: none !important;
+  }
+}
+
+@layer components {
+  /* BG Gradients */
+  .gradient-bottom-left {
+    @apply w-full h-full absolute bottom-0 left-0 z-20;
+    background: radial-gradient(circle at bottom left, rgba(162, 133, 208, 0.3) 0%, transparent 50%);
+  }
+
+  .gradient-top-right {
+    @apply w-full h-full absolute top-0 right-0 z-20;
+    background: radial-gradient(circle at top right, rgba(17, 138, 138, 0.7) 0%, transparent 40%);
+  }
+
+  .gradient-top-left {
+    @apply w-full h-full absolute top-0 left-0 z-20;
+    background: radial-gradient(circle at top left, rgba(243, 121, 37, 0.3) 0%, transparent 20%);
+  }
+
+  /* Custom */
+  .bg-group-title {
+    background: linear-gradient(
+      95deg,
+      rgba(255, 255, 255, 0.34) 4.12%,
+      rgba(255, 255, 255, 0.66) 23.76%,
+      rgba(255, 255, 255, 0.45) 69.23%,
+      rgba(255, 255, 255, 0.22) 97.95%
+    );
+  }
+
+  /* Animations */
+  .animate-gradient--activists {
+    object-position: -160px;
+    animation: scaleBounce 5s infinite alternate linear;
+  }
+
+  .animate-gradient--builders {
+    object-position: -480px;
+    animation: scaleBounce 5s infinite alternate linear;
+  }
+
+  .animate-gradient--artists {
+    object-position: -730px;
+    animation: scaleBounce 5s infinite alternate linear;
+  }
+
+  .animate-gradient--creators {
+    object-position: -230px;
+    animation: scaleBounce 5s infinite alternate linear;
+  }
+
+  .animate-gradient--advocates {
+    object-position: -630px;
+    animation: scaleBounce 5s infinite alternate linear;
+  }
+
+  @keyframes scaleBounce {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.4);
+    }
+  }
+
+  @keyframes rotate {
+    0% {
+      background-position: 0% 0%;
+      transform: scale(1);
+    }
+    100% {
+      background-position: 100% 100%;
+      transform: scale(1.35);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn ease-in 800ms forwards;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .animate-hero {
+    animation: hero cubic-bezier(0.68, -0.55, 0.265, 1.55) 1000ms forwards;
+  }
+
+  @keyframes hero {
+    0% {
+      opacity: 0;
+      transform: translateY(3.125rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Scrollbar */
+  .styled-scroll::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .styled-scroll::-webkit-scrollbar-thumb {
+    background: rgba(162, 133, 208, 0.3);
+  }
+
+  /* Winner Slide */
+  .winner-slide {
+    container-type: size;
+    container-name: winner-slide;
+  }
+
+  @container winner-slide (height < 600px) {
+    .winner-slide__copy {
+      @apply text-[0.7rem]/[0.95rem];
+    }
+  }
+}
