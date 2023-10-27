@@ -10,7 +10,7 @@ Simplified stack for a flat, single-page site.
 - [Typescript](https://www.typescriptlang.org/) for programming language
 - [Alpine.js](https://alpinejs.dev/) for frontend interactivity and state management
 - [Tailwind CSS](https://tailwindcss.com/) for styling
-- [Vercel](https://vercel.com/) for deployment
+- [Netlify](https://www.netlify.com/) for deployment
 
 ## Local Development
 
@@ -30,4 +30,4 @@ npm run dev
 
 ## Deployment
 
-This site uses Vercel for deployment. Any changes to the `main` branch will be automatically deployed to the production site.
+This site uses Netlify for deployment. Any changes to the `main` branch will be automatically deployed to the production site.
