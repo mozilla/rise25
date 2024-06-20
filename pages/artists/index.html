@@ -1,0 +1,129 @@
+{#
+ # This Source Code Form is subject to the terms of the Mozilla Public
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ #}
+
+{% extends "honorees-base.html" %}
+
+{% block page_title %}Rise25 - 2024 Honorees - Meet the Artists{% endblock %}
+{% block page_desc %}{% endblock %}
+
+{% block body_class %}r25-t-green{% endblock %}
+
+{% block category_title %}Meet the Artists{% endblock %}
+{% block category_desc %}
+They transcend traditional AI applications, like synthesizing visuals
+or using large language models. Their projects, whether interactive
+websites, films, or digital media, challenge our perceptions and
+demonstrate how AI can amplify and empower human creativity. Their work
+provokes thought and offers fresh perspectives on the intersection of
+AI and art.
+{% endblock %}
+
+{% block honorees_content %}
+{% call person(
+    id='sinead-bovell',
+    name='Sinéad Bovell',
+    image='/media/img/people/sinead-bovell.jpg'
+  ) %}
+    <p>Sinéad Bovell is a strategic foresight advisor and the founder of
+      <a href="https://www.wayetalks.com/" rel="noopener" target="_blank">WAYE</a>,
+      an organization that prepares youth for a future with advanced
+      technologies, with a focus on non-traditional and minority markets.</p>
+  {% endcall %}
+
+  {% call person(
+    id='stephanie-dinkins',
+    name='Stephanie Dinkins',
+    image='/media/img/people/stephanie-dinkins.jpg'
+  ) %}
+    <p>Stephanie Dinkins is a transmedia artist who creates experiences that
+      spark dialog about race, gender, aging, and our future histories. Her
+      work in AI and other mediums uses emerging technologies and social
+      collaboration to work toward technological ecosystems based on care and
+      social equity. Dinkins’ experiences with and explorations of artificial
+      intelligence have led to a deep interest in how algorithmic systems impact
+      communities of color in particular and all of our futures more generally.</p>
+
+    <p>Dinkins’ experiments with AI have led full circle to recognize the
+      stories, myths, and cultural perspectives, aka data, that we hold and
+      share form and inform society and have done so for millennia. She has
+      concluded that our stories are our algorithms. We must value, grow,
+      respect, and collaborate with each other’s stories (data) to build care
+      and broadly compassionate values into the technological ecosystems that
+      increasingly support our future.</p>
+
+    <p>Dinkins teaches at Stony Brook University, where she holds the Kusama
+      Endowed Chair in Art. Dinkins is a Schmidt AI 2050 Senior Fellow and
+      LG_Guggenhiem Award winner named to Time Magazine’s 100 Most Influential
+      People in AI(2023), a United States Artist Fellow, Knight Arts & Tech
+      Fellow Lucas Artists Fellow in Visual Arts. Additional supporters of
+      Dinkins work include the Onassis Foundation, Stanford Institute for
+      Human-Centered Artificial Intelligence, Creative Capital, Soros Equality
+      Fellowship, Data and Society Research Institute Fellowship, Sundance New
+      Frontiers Story Lab, Eyebeam, Pioneer Works Tech Lab, NEW INC, Blue
+      Mountain Center; The Laundromat Project; Santa Fe Art Institute and
+      Art/Omi.</p>
+
+    <p>The New York Times featured Dinkins in its pages as an AI influencer.
+      Wired, Art In America, Artsy, Art21, Hyperallergic, the BBC, Wilson
+      Quarterly, and a host of popular podcasts have recently highlighted
+      Dinkins' art and ideas.</p>
+  {% endcall %}
+
+  {% call person(
+    id='holly-herndon',
+    name='Holly Herndon',
+    image='/media/img/people/holly-herndon.jpg'
+  ) %}
+    <p>Holly Herndon is an artist renowned for her pioneering work in machine
+      learning and music. Holly holds a doctorate in Computer Music from
+      Stanford. She and Mathew Dryhurst were awarded the 2022 Ars Electronica
+      prize for digital art, and co-founded Spawning, building an AI data
+      governance layer.</p>
+    <p><cite>Photo: Boris Camaca</cite></p>
+  {% endcall %}
+
+  {% call person(
+    id='karla-ortiz',
+    name='Karla Ortiz',
+    image='/media/img/people/karla-ortiz.jpg'
+  ) %}
+    <p>Karla Ortiz is a Puerto Rican, internationally recognized, award-winning
+      artist. With her exceptional design sense, realistic renders, and
+      character-driven narratives, Karla has contributed to many big-budget
+      projects, including <cite>Jurassic World</cite>, <cite>World of Warcraft</cite>,
+      <cite>Rogue One: A Star Wars Story</cite>, Marvel’s <cite>Thor: Ragnarok</cite>,
+      <cite>Black Panther</cite>, <cite>Avengers: Infinity War</cite>,
+      <cite>Loki</cite> seasons 1 and 2, <cite>Eternals</cite>, and most notably
+      her design of Doctor Strange for Marvel’s <cite>Doctor Strange</cite>.</p>
+
+    <p>Karla’s work is also recognized in the fine art world, showcasing her
+      figurative and mysterious art in notable galleries, such as Spoke Art and
+      Hashimoto Contemporary in San Francisco, Nucleus Gallery, Thinkspace,
+      Maxwell Alexander Gallery in LA, and Galerie Arludik in Paris. She
+      currently lives in San Francisco with her cat, Bady.</p>
+  {% endcall %}
+
+  {% call person(
+    id='linda-dounia-rebeiz',
+    name='Linda Dounia Rebeiz',
+    image='/media/img/people/linda-dounia-rebeiz.jpg'
+  ) %}
+    <p>Linda Dounia Rebeiz is an artist and designer who investigates the philosophical
+      and environmental implications of technocapitalism. Her work mediates her
+      memories and context as alternative truths and evidence of excluded ways
+      of being and doing using generative technologies, namely Artificial
+      Intelligence and Creative Coding. In 2023, Linda was recognized on the
+      TIME100 list of most influential people in AI for her work on speculative
+      archiving — building AI models that help us remember what is lost. She is
+      currently based in Dakar, where she is from.</p>
+  {% endcall %}
+
+  <div class="r25-c-next r25-t-teal">
+    <a href="/builders/">
+      <h3>Meet the<br> Builders</h3>
+    </a>
+  </div>
+{% endblock %}

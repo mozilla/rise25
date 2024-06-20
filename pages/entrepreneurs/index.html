@@ -1,0 +1,141 @@
+{#
+ # This Source Code Form is subject to the terms of the Mozilla Public
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ #}
+
+{% extends "honorees-base.html" %}
+
+{% block page_title %}Rise25 - 2024 Honorees - Meet the Entrepreneurs{% endblock %}
+{% block page_desc %}{% endblock %}
+
+{% block body_class %}r25-t-purple{% endblock %}
+
+{% block category_title %}Meet the Entrepreneurs{% endblock %}
+{% block category_desc %}
+These daring individuals are transforming imaginative ideas into reality.
+They’re crafting businesses and solutions with AI to meet societal needs,
+improve everyday life and forge new technological paths. They embody
+innovation, steering startups and projects with a commitment to ethical
+standards, inclusiveness and enhancing human welfare through technology.
+{% endblock %}
+
+{% block honorees_content %}
+{% call person(
+    id='daniel-beutel',
+    name='Daniel Beutel',
+    image='/media/img/people/daniel-beutel.jpg'
+  ) %}
+    <p>Daniel Beutel is one of the creators of
+      <a href="https://flower.ai" rel="noopener" target="_blank">Flower</a>,
+      an open-source framework for training AI on distributed data using
+      federated learning. Flower is one of the leading federated AI ecosystems
+      with a large and growing community and users at many Fortune 500 companies
+      and most top universities worldwide. Daniel previously held roles as Head
+      of AI and CTO and has considerable experience in running and scaling
+      engineering teams. He is a CS PhD candidate at the University of Cambridge
+      and co-founder of Flower Labs, a startup backed by Y Combinator, First
+      Spark Ventures, Felicis Ventures, and Mozilla Ventures (among others).</p>
+  {% endcall %}
+
+  {% call person(
+    id='ali-farhadi',
+    name='Ali Farhadi',
+    image='/media/img/people/ali-farhadi.jpg'
+  ) %}
+    <p>Ali Farhadi is the CEO of the Allen Institute for AI (AI2) and a Professor
+      at the Paul G. Allen School of Computer Science & Engineering at the
+      University of Washington. Ali has been a professor at the UW Allen School
+      since 2012. He first joined AI2 in 2015 to lead the institute’s computer
+      vision research team with a focus on visual common-sense reasoning and the
+      role of actions and interactions in visual understanding. While at AI2, he
+      co-founded Xnor.ai, the first on-device deep learning startup that was
+      acquired by Apple in 2020. Ali led Apple’s next-generation machine learning
+      efforts until 2023 when he rejoined AI2 as CEO in July. Ali’s research
+      impact has been globally recognized with several best paper awards at CVPR,
+      NeruIPS, AAAI, NSF Career Award, and the Sloan Fellowship, and he was
+      named one of Forbes’s Top 5 AI Entrepreneurs in 2018.</p>
+  {% endcall %}
+
+  {% call person(
+    id='gemma-galdon-clavell',
+    name='Gemma Galdon-Clavell',
+    image='/media/img/people/gemma-galdon-clavell.jpg'
+  ) %}
+    <p>Dr. Gemma Galdon-Clavell is a pioneer and global force in AI safety and
+      auditing, ensuring that machine learning tools truly serve society. She is
+      the founder and CEO of Eticas.ai, a venture-backed organization that
+      identifies, measures and corrects algorithmic vulnerabilities, bias and
+      inefficiencies in predictive and LLM tools. Eticas’ software, the ITACA
+      platform, is the first solution to automate impact analysis and monitoring,
+      ensuring that AI systems are high performing and safe, explainable, fair
+      and trustworthy.</p>
+
+    <p>Dr. Galdon-Clavell’s impactful work – and passion for disrupting the
+      status quo – earned her recognition as a Hispanic Star Awardee at the
+      United Nations in 2023, an Ashoka Fellow in 2020 and a finalist at the EU
+      Prize for Women Innovators awarded by the European Commission in 2017. In
+      2023 the BBC acknowledged her as one of the “people changing the world”
+      and in 2024 she was honored by Forbes Women as one of the “35 Leading
+      Spanish Women in Technology”, praised as “a pioneer in algorithmic
+      auditing software”.</p>
+
+    <p>Dr. Galdon-Clavell is an active advisor to international and regional
+      institutions such as the United Nations (UN), the Organization for Economic
+      Cooperation and Development (OECD), European Institute of Innovation and
+      Technology (EIT) and the European Commission, among others. She is also a
+      sought-after speaker, with recent engagements at high-level fora like the
+      US-EU Trade and Technology Council (TTC), re:publica or TEDx. Her comments
+      on AI developments have been captured in Wired, Business Insider, Forbes
+      and Computer Weekly.</p>
+  {% endcall %}
+
+  {% call person(
+    id='peter-gault',
+    name='Peter Gault',
+    image='/media/img/people/peter-gault.jpg'
+  ) %}
+    <p>Peter Gault is the Founder & Executive Director of the education nonprofit
+      <a href="https://www.quill.org/" rel="noopener" target="_blank">Quill.org</a>.
+      Quill’s AI-powered, open source literacy tools help 3rd-12th grade students
+      become stronger writers and critical thinkers. Quill’s AI provides students
+      with immediate feedback and coaching on their writing, enabling them to
+      revise their work and quickly develop their skills. Teachers are provided
+      with free access to our research-based curriculum, and our nonprofit, open
+      source organization works with academic researchers to design and build its
+      technology and curriculum. Quill has now impacted nine million students
+      across the world, with students writing and receiving feedback on two
+      billion sentences.</p>
+
+    <p>Quill is explicitly committed to building Responsible AI designed for
+      students attending low-income schools. Quill has built over 300 AI models
+      over the past five years by creating custom datasets representing diverse
+      students and training fine-tuned models responsive to these students’
+      needs.</p>
+  {% endcall %}
+
+  {% call person(
+    id='pelonomi-moiloa',
+    name='Pelonomi Moiloa',
+    image='/media/img/people/pelonomi-moiloa.jpg'
+  ) %}
+    <p>Pelonomi Moiloa is CEO of Lelapa AI. Lelapa AI is a socially grounded research
+      and product lab driving AI for Africans by Africans. A biomedical and
+      electrical engineer by training, Pelonomi has spent almost a decade
+      deriving insights from data to address complex problems.</p>
+
+    <p>She is mentor and trustee of the Ruth First memorial trust scholarship
+      programme and co-director of The Ungovernable NPC which is involved in
+      various community initiatives including the running of the Code Kamoso
+      coding academy for girl teens and a guerilla community vegetable and
+      medicine garden. Pelonomi is drawn to the curiosities of community and
+      connection in how they can inform imaginings and implementations of a
+      better future for more people.</p>
+  {% endcall %}
+
+  <div class="r25-c-next r25-t-red">
+    <a href="/advocates/">
+      <h3>Meet the<br> Advocates</h3>
+    </a>
+  </div>
+{% endblock %}

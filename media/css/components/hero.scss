@@ -1,0 +1,103 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+@use '../lib' as r25;
+
+@import '~@mozilla-protocol/core/protocol/css/includes/lib';
+
+// * -------------------------------------------------------------------------- */
+// Hero
+
+.r25-hero {
+    background-color: transparent;
+    position: relative;
+
+    .r25-hero-intro {
+        @include text-body-xl;
+    }
+
+    & > .mzp-l-content {
+        z-index: 3;
+    }
+
+    .r25-background-overlay {
+        background-color: rgba(0, 0, 0, 0.5);
+        background-image:
+            linear-gradient(135deg, fade-out(r25.$orange, 0.65) -100px, fade-out(r25.$orange, 1) 500px),
+            linear-gradient(-135deg, fade-out(r25.$teal, 0.65) -100px, fade-out(r25.$teal, 1) 500px);
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+
+        @media #{$mq-md} {
+            background-color: transparent;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 25%, transparent 75%),
+                linear-gradient(135deg, fade-out(r25.$orange, 0.25) -100px, fade-out(r25.$orange, 1) 500px),
+                linear-gradient(-135deg, fade-out(r25.$teal, 0.25) -100px, fade-out(r25.$teal, 1) 500px);
+        }
+    }
+
+    .r25-hero-content {
+        margin: 0 auto;
+        max-width: 528px;
+        text-align: center;
+
+        @media #{$mq-md} {
+            margin: 0;
+            text-align: start;
+            width: 50%;
+        }
+    }
+
+    .r25-c-wordmark {
+        margin: 0 auto $spacing-md;
+
+        @media #{$mq-md} {
+            margin: 0 0 $spacing-md;
+        }
+    }
+
+    .r25-hero-cta {
+        .r25-c-button::after {
+            content: " ↓";
+        }
+    }
+
+    .r25-background-video {
+        bottom: 0;
+        display: none;
+        height: 100%;
+        left: 0;
+        object-fit: cover;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+
+        @media #{$mq-md} and (prefers-reduced-motion: no-preference) {
+            display: block;
+        }
+    }
+
+    .r25-background-video-fallback {
+        bottom: 0;
+        display: block;
+        height: 100%;
+        left: 0;
+        object-fit: cover;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+
+        @media #{$mq-md} and (prefers-reduced-motion: no-preference) {
+            display: none;
+        }
+    }
+}

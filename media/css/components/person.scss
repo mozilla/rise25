@@ -1,0 +1,241 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+@use '../lib' as r25;
+
+@import '~@mozilla-protocol/core/protocol/css/includes/lib';
+
+// * -------------------------------------------------------------------------- */
+// Person
+
+.r25-c-person {
+    @include white-links;
+    box-shadow: inset 0 0 2px 1px rgba(255, 255, 255, 0.2);
+    display: grid;
+    gap: $spacing-md $spacing-xl;
+    grid-template-areas:
+        'img name'
+        'img bio'
+        'img social';
+    grid-template-rows: min-content min-content 1fr;
+    margin: 0 auto $spacing-lg;
+    padding: $spacing-xl;
+    position: relative;
+
+    .r25-c-person-name {
+        @include text-title-xs;
+        align-self: start;
+        grid-area: name;
+        margin: 0;
+
+        @supports (background-clip: text) {
+            background-clip: text;
+            color: fade-out($color-white, 0.8);
+
+            .r25-t-red & {
+                background-image: linear-gradient(to left, r25.$red, $color-white);
+            }
+
+            .r25-t-orange & {
+                background-image: linear-gradient(to left, r25.$orange, $color-white);
+            }
+
+            .r25-t-green & {
+                background-image: linear-gradient(to left, r25.$green, $color-white);
+            }
+
+            .r25-t-teal & {
+                background-image: linear-gradient(to left, r25.$teal, $color-white);
+            }
+
+            .r25-t-purple & {
+                background-image: linear-gradient(to left, r25.$purple, $color-white);
+            }
+        }
+    }
+
+    .r25-c-person-bio {
+        grid-area: bio;
+        align-self: start;
+    }
+
+    .r25-c-person-link {
+        @include text-body-sm;
+        display: none;
+
+        a:link,
+        a:visited {
+            color: $color-marketing-gray-50;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: color 100ms ease-in;
+
+            &:hover,
+            &:focus,
+            &:active {
+                color: $color-white;
+            }
+        }
+    }
+
+    .r25-c-social-share {
+        align-self: start;
+        background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        grid-area: social;
+        padding: $spacing-xl $spacing-md $spacing-md;
+    }
+
+    .r25-c-person-img {
+        grid-area: img;
+        align-self: start;
+    }
+
+    .r25-t-red & {
+        background-image: linear-gradient(-50deg, fade-out(r25.$red, 0.20) -200px, fade-out(r25.$red, 1) 80%);
+    }
+
+    .r25-t-orange & {
+        background-image: linear-gradient(-50deg, fade-out(r25.$orange, 0.20) -200px, fade-out(r25.$orange, 1) 80%);
+    }
+
+    .r25-t-green & {
+        background-image: linear-gradient(-50deg, fade-out(r25.$green, 0) -200px, fade-out(r25.$green, 1) 80%);
+    }
+
+    .r25-t-teal & {
+        background-image: linear-gradient(-50deg, fade-out(r25.$teal, 0.20) -200px, fade-out(r25.$teal, 1) 80%);
+    }
+
+    .r25-t-purple & {
+        background-image: linear-gradient(-50deg, fade-out(r25.$purple, 0.20) -200px, fade-out(r25.$purple, 1) 80%);
+    }
+}
+
+// Different layout when JS is available (bio truncated, opens in a modal)
+.js .r25-c-person {
+    grid-template-areas:
+        'name'
+        'bio'
+        'link'
+        'img';
+    margin: 0 auto $layout-md;
+    max-width: $content-sm;
+
+    @media #{$mq-md} {
+        margin-bottom: 0;
+        max-width: none;
+    }
+
+    .r25-c-person-bio {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        p {
+            display: inline;
+        }
+
+        @supports (display: -webkit-box) {
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            display: -webkit-box;
+            text-overflow: unset;
+            white-space: normal;
+
+            p {
+                display: block;
+            }
+        }
+    }
+
+    .r25-c-person-link {
+        display: block;
+        grid-area: link;
+    }
+
+    .r25-c-social-share {
+        align-self: self-end;
+        display: block;
+        grid-area: img;
+    }
+
+    .r25-c-person-img {
+        align-self: self-end;
+        margin: 0 auto;
+    }
+}
+
+// Different style and layout when in a modal
+.js .mzp-c-modal-overlay-contents {
+    .r25-c-person {
+        background-color: $color-white;
+        color: $color-black;
+        grid-template-areas:
+            'name'
+            'bio'
+            'social'
+            'img';
+        padding-top: $spacing-2xl;
+
+        @media #{$mq-md} {
+            grid-template-areas:
+                'img name'
+                'img bio'
+                'img social';
+            padding-top: $spacing-xl;
+        }
+
+        .r25-c-person-name {
+            color: $color-black;
+            background-image: none;
+
+            br {
+                display: none;
+            }
+        }
+
+        .r25-c-person-bio {
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: unset;
+            display: block;
+
+            a:link {
+                color: $color-black;
+                font-weight: bold;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $color-link-hover;
+                }
+            }
+
+            a:visited {
+                color: $color-dark-gray-20;
+                font-weight: bold;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $color-link-visited-hover;
+                }
+            }
+        }
+
+        .r25-c-person-link {
+            display: none;
+        }
+
+        .r25-c-social-share {
+            align-self: self-start;
+            background-image: none;
+            grid-area: social;
+            padding: 0;
+        }
+
+        .r25-c-person-img {
+            align-self: self-start;
+        }
+    }
+}
