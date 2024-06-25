@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+
+{% block page_title %}Rise25 - Meet the 2024 honorees{% endblock %}
+{% block page_desc %}{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="/media/css/index.scss">
+{% endblock %}
+
+{% macro category(id, theme_class, title, desc, expanded, link) %}
+<div id="{{ id }}" class="r25-c-category {{ theme_class }}">
+  <div class="r25-c-category-body">
+    <h3 class="r25-c-category-title">{{ title }}</h3>
+    <p class="r25-c-category-desc">{{ desc }}</p>
+    <p class="r25-c-category-expand">
+      {{ expanded }}
+    </p>
+  </div>
+
+  <p class="r25-c-category-cta">
+    <a class="r25-c-button t-dark" href="{{ link }}">See the honorees</a>
+  </p>
+</div>
+{% endmacro %}
+
+{% block content %}
+<section class="r25-hero">
+  <div class="r25-background-overlay"></div>
+  <video class="r25-background-video" preload="auto" playsinline autoplay loop muted width="680" height="383">
+    <source src="https://assets.mozilla.net/rise25/rise25-2024-hero-loop.webm" type="video/webm">
+  </video>
+
+  <img class="r25-background-video-fallback" src="/media/img/hero-fallback.jpg" width="1600" height="900" alt="">
+
+  <div class="mzp-l-content">
+    <div class="r25-hero-content">
+      <h1 class="r25-c-wordmark">Rise25</h1>
+      <h2 class="r25-fancy-title">Meet the Honorees</h2>
+      <p class="r25-hero-intro">Discover what sets these standout individuals apart in each of our five categories.</p>
+      <div class="r25-hero-cta">
+        <p><a href="#categories" class="r25-c-button">Categories</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="categories">
+  <div class="mzp-l-content">
+  <h2 class="r25-section-title">Categories</h2>
+
+  {{ category(
+    id='advocates',
+    theme_class='r25-t-red',
+    title='Advocates',
+    desc='Guiding AI towards a responsible future.',
+    expanded='These are the policymakers, activists and thinkers ensuring AI is
+    developed ethically, inclusively and transparently. This category also
+    includes those who are adept at translating complex AI concepts for the
+    broader public — including journalists, content creators and cultural
+    commentators. They champion digital rights and accessible AI, striving
+    to make AI a force for societal good.',
+    link='/advocates/'
+  ) }}
+
+  {{ category(
+    id='artists',
+    theme_class='r25-t-green',
+    title='Artists',
+    desc='Reimagining AI’s creative potential.',
+    expanded='They transcend traditional AI applications, like synthesizing visuals
+    or using large language models. Their projects, whether interactive
+    websites, films, or digital media, challenge our perceptions and
+    demonstrate how AI can amplify and empower human creativity. Their work
+    provokes thought and offers fresh perspectives on the intersection of
+    AI and art.',
+    link='/artists/'
+  ) }}
+
+  {{ category(
+    id='builders',
+    theme_class='r25-t-teal',
+    title='Builders',
+    desc='Developing AI through ethical innovation.',
+    expanded='They’re the architects of trustworthy AI, including engineers and data
+    scientists dedicated to the principles of open source, open data and
+    open science. They focus on technical proficiency and responsible and
+    ethical construction. Their work ensures AI is secure, accessible and
+    reliable, aiming to create tools that empower and advance society.',
+    link='/builders/'
+  ) }}
+
+  {{ category(
+    id='change-agents',
+    theme_class='r25-t-orange',
+    title='Change Agents',
+    desc='Cultivating inclusive AI.',
+    expanded='Challengers lead the way in diversifying AI, bringing varied community
+    voices into tech. They focus on inclusivity in AI development, ensuring
+    technology serves and represents everyone, especially those historically
+    excluded from the tech narrative. They are community leaders, corporate
+    leaders, activists and outside-the-box thinkers finding ways to amplify
+    the impacts of AI for marginalized communities. Their work fosters an
+    AI environment of equality and empowerment.',
+    link='/change-agents/'
+  ) }}
+
+  {{ category(
+    id='entrepreneurs',
+    theme_class='r25-t-purple',
+    title='Entrepreneurs',
+    desc='Fueling AI’s evolution with visionary ventures.',
+    expanded='These daring individuals are transforming imaginative ideas into reality.
+    They’re crafting businesses and solutions with AI to meet societal needs,
+    improve everyday life and forge new technological paths. They embody
+    innovation, steering startups and projects with a commitment to ethical
+    standards, inclusiveness and enhancing human welfare through technology.',
+    link='/entrepreneurs/'
+  ) }}
+</section>
+
+<section class="r25-previous" id="honorees-2023">
+  <div class="r25-background-overlay"></div>
+  <video class="r25-background-video" preload="auto" playsinline autoplay loop muted width="680" height="383">
+    <source src="https://assets.mozilla.net/rise25/rise25-2024-docuseries-loop.webm" type="video/webm">
+  </video>
+
+  <img class="r25-background-video-fallback" src="/media/img/docuseries-fallback.jpg" width="1600" height="900" alt="">
+
+  <div class="mzp-l-content">
+    <div class="r25-previous-content">
+      <h2 class="r25-previous-title">Glance back to our 2023 honorees</h2>
+      <div class="r25-previous-cta">
+        <p><a href="https://www.youtube.com/playlist?list=PLnRGhgZaGeBs96fHlOFhrVaHsgflAX4cP" rel="noopener" target="_blank" class="r25-c-button">Watch these video profiles</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,47 @@
+{#
+ # This Source Code Form is subject to the terms of the Mozilla Public
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ #}
+
+{% extends "base.html" %}
+
+{% block page_css %}
+<link rel="stylesheet" href="/media/css/honorees.scss">
+{% endblock %}
+
+{% macro person(id, name, image) %}
+<article id="{{ id }}" data-id="{{ id }}" data-person-name="{{ name|striptags }}" class="r25-c-person vcard" itemscope itemtype="http://schema.org/Person">
+  <h3 class="fn r25-c-person-name" itemprop="name">{{ name|safe }}</h3>
+  <div class="r25-c-person-bio">
+    {{ caller() }}
+  </div>
+  <p class="r25-c-person-link"><a class="r25-js-person" href="#{{ id }}">Read on</a></p>
+  <img class="r25-c-person-img" src="{{ image }}" alt="{{ name|striptags }}" width="400" height="400" loading="lazy">
+  {% include "partials/social-share.html" %}
+</article>
+{% endmacro %}
+
+{% block content %}
+<section class="r25-honorees-hero">
+  <div class="mzp-l-content">
+    <div class="r25-hero-content">
+      <h1 class="r25-c-wordmark">Rise25</h1>
+      <h2 class="r25-hero-title">{% block category_title %}{% endblock %}</h2>
+      <p class="r25-hero-intro">{% block category_desc %}{% endblock %}</p>
+      <p class="r25-hero-back"><a href="/">Back to categories</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="r25-honorees">
+  <div class="mzp-l-content r25-honorees-gallery">
+    {% block honorees_content %}{% endblock %}
+  </div>
+</section>
+<div class="mzp-u-modal-content"></div>
+{% endblock %}
+
+{% block page_js %}
+<script type="module" src="/media/js/honorees.js"></script>
+{% endblock %}

@@ -1,33 +1,12 @@
-# Rise25
-
-Website for announcing Mozilla's Rise 25 competition winners
-
-## Stack
-
-Simplified stack for a flat, single-page site.
-
-- [Vite](https://vitejs.dev/) for frontend tooling / build
-- [Typescript](https://www.typescriptlang.org/) for programming language
-- [Alpine.js](https://alpinejs.dev/) for frontend interactivity and state management
-- [Tailwind CSS](https://tailwindcss.com/) for styling
-- [Netlify](https://www.netlify.com/) for deployment
+# Rise25 2024 Honorees
+Announcing the Mozilla Rise25 honorees for 2024.
+https://rise25.mozilla.org/
 
 ## Local Development
-
 ```bash
 # install dependencies if you haven't already
 npm install
 
 # run dev server and check your console for the local URL
-npm run dev
+npm start
 ```
-
-- `index.html` file is the entrypoint for the site.
-- `src/winners.ts` contains winners, categories, and groups.
-- `src/components` directory contains all the Alpine.js components. Each component is a single file. Components are imported into `main.ts`.
-- `src/styles` directory contains all the Tailwind CSS styles.
-- `src/assets` directory contains all the static assets.
-
-## Deployment
-
-This site uses Netlify for deployment.

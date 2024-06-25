@@ -1,0 +1,72 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+@use '../lib' as r25;
+
+@import '~@mozilla-protocol/core/protocol/css/includes/lib';
+
+// * -------------------------------------------------------------------------- */
+// Previous year honorees
+
+.r25-previous {
+    background-color: transparent;
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+
+    .r25-previous-title {
+        @include text-title-sm;
+        margin-bottom: $layout-md;
+    }
+
+    & > .mzp-l-content {
+        width: 100%;
+        z-index: 3;
+    }
+
+    .r25-background-overlay {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 25%, transparent 75%);
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    .r25-background-video {
+        bottom: 0;
+        display: none;
+        height: 100%;
+        left: 0;
+        object-fit: cover;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+
+        @media (prefers-reduced-motion: no-preference) {
+            display: block;
+        }
+    }
+
+    .r25-background-video-fallback {
+        bottom: 0;
+        display: block;
+        height: 100%;
+        left: 0;
+        object-fit: cover;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+
+        @media #{$mq-md} and (prefers-reduced-motion: no-preference) {
+            display: none;
+        }
+    }
+}

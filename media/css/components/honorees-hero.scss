@@ -1,0 +1,101 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+@use '../lib' as r25;
+
+@import '~@mozilla-protocol/core/protocol/css/includes/lib';
+
+// * -------------------------------------------------------------------------- */
+// Hero
+
+.r25-honorees-hero {
+    position: relative;
+
+    .r25-hero-intro {
+        @include text-body-lg;
+    }
+
+    & > .mzp-l-content {
+        padding-bottom: 0;
+        z-index: 3;
+    }
+
+    .r25-hero-content {
+        max-width: $content-md;
+
+        @media #{$mq-md} {
+            width: 60%;
+        }
+    }
+
+    .r25-hero-back {
+        font-weight: bold;
+        margin-top: $layout-lg;
+
+        a:link,
+        a:visited {
+            color: $color-white;
+
+            &:before {
+                content: '← ';
+            }
+        }
+    }
+
+    .r25-t-red & {
+        background-image: linear-gradient(-135deg, fade-out(r25.$red, 0.25) -100px, fade-out(r25.$red, 1) 500px),
+            linear-gradient(135deg, fade-out(r25.$red, 0.25) -300px, fade-out(r25.$red, 1) 500px);
+    }
+
+    .r25-t-orange & {
+        background-image: linear-gradient(-135deg, fade-out(r25.$orange, 0.25) -100px, fade-out(r25.$orange, 1) 500px),
+            linear-gradient(135deg, fade-out(r25.$orange, 0.25) -300px, fade-out(r25.$orange, 1) 500px);
+    }
+
+    .r25-t-green & {
+        background-image: linear-gradient(-135deg, fade-out(r25.$green, 0.25) -100px, fade-out(r25.$green, 1) 500px),
+            linear-gradient(135deg, fade-out(r25.$green, 0.25) -300px, fade-out(r25.$green, 1) 500px);
+    }
+
+    .r25-t-teal & {
+        background-image: linear-gradient(-135deg, fade-out(r25.$teal, 0.25) -100px, fade-out(r25.$teal, 1) 500px),
+            linear-gradient(135deg, fade-out(r25.$teal, 0.25) -300px, fade-out(r25.$teal, 1) 500px);
+    }
+
+    .r25-t-purple & {
+        background-image: linear-gradient(-135deg, fade-out(r25.$purple, 0.25) -100px, fade-out(r25.$purple, 1) 500px),
+            linear-gradient(135deg, fade-out(r25.$purple, 0.25) -300px, fade-out(r25.$purple, 1) 500px);
+    }
+
+    .r25-hero-title {
+        @include text-title-xl;
+        font-weight: 900;
+        display: inline-block;
+
+        @supports (background-clip: text) {
+            background-clip: text;
+            color: fade-out($color-white, 0.8);
+
+            .r25-t-red & {
+                background-image: linear-gradient(to left, r25.$red, $color-white);
+            }
+
+            .r25-t-orange & {
+                background-image: linear-gradient(to left, r25.$orange, $color-white);
+            }
+
+            .r25-t-green & {
+                background-image: linear-gradient(to left, r25.$green, $color-white);
+            }
+
+            .r25-t-teal & {
+                background-image: linear-gradient(to left, r25.$teal, $color-white);
+            }
+
+            .r25-t-purple & {
+                background-image: linear-gradient(to left, r25.$purple, $color-white);
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+@use '~@mozilla-protocol/core/protocol/css/includes/lib' as *;
+
+@use 'lib' as r25;
+
+@use '~@mozilla-protocol/core/protocol/css/components/modal';
+
+@use './components/honorees-hero.scss';
+@use './components/person.scss';
+@use './components/next.scss';
+@use './components/social.scss';
+
+.js {
+    .r25-honorees-gallery {
+        @media #{$mq-md} {
+            display: grid;
+            gap: $spacing-xl;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media #{$mq-lg} {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+

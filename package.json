@@ -1,29 +1,37 @@
 {
-  "name": "rise25",
-  "private": true,
-  "version": "1.0.0",
-  "type": "module",
+  "name": "rise25-2024",
+  "version": "0.1",
+  "description": "Static site announcing the 2024 Rise25 honorees",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "start": "export NODE_ENV=development && webpack serve",
+    "build": "export NODE_ENV=production && webpack",
+    "watch": "export NODE_ENV=development && webpack watch"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mozmeao/rise25-2024.git"
+  },
+  "author": "mozmeao",
+  "license": "MPL",
+  "bugs": {
+    "url": "https://github.com/mozmeao/rise25-2024/issues"
+  },
+  "homepage": "https://github.com/mozmeao/rise25-2024#readme",
   "devDependencies": {
-    "@types/alpinejs": "^3.13.2",
-    "@types/alpinejs__focus": "^3.13.1",
-    "@types/alpinejs__intersect": "^3.13.1",
-    "@types/alpinejs__persist": "^3.13.1",
-    "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.31",
-    "prettier-plugin-tailwindcss": "^0.5.5",
-    "tailwindcss": "^3.3.3",
-    "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "@parcel/transformer-sass": "^2.12.0",
+    "babel-loader": "^9.1.3",
+    "css-loader": "^7.1.2",
+    "html-bundler-webpack-plugin": "^3.14.0",
+    "nunjucks": "^3.2.4",
+    "postcss": "^8.4.38",
+    "sass-loader": "^14.2.1",
+    "sync-fetch": "^0.5.2",
+    "webpack": "^5.92.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
-    "@alpinejs/focus": "^3.13.1",
-    "@alpinejs/intersect": "^3.13.1",
-    "@alpinejs/persist": "^3.13.1",
-    "alpinejs": "^3.13.1"
+    "@mozilla-protocol/core": "^19.2.0",
+    "@mozmeao/dnt-helper": "^1.0.0"
   }
 }
