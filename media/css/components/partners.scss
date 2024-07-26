@@ -1,0 +1,23 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+@use '../lib' as r25;
+
+@import '~@mozilla-protocol/core/protocol/css/includes/lib';
+
+// * -------------------------------------------------------------------------- */
+// Partner logos
+
+.r25-partners-list {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: $layout-lg;
+    justify-content: space-around;
+    padding: $layout-lg 0 $layout-xl;
+
+    @media #{$mq-md} {
+        flex-direction: row;
+    }
+}
